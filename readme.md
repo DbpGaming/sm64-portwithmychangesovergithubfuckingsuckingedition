@@ -2,7 +2,16 @@
 this is a modified version of sm64-port with some changes and patches pre-applied
 currently it only does these few things
 
-odyssey movement
+## odyssey and sunshine movement
+	wall slide
+	dive hop
+	ground pound dive
+	ground pound jump
+	roll
+	spin jump
+	spin pound
+	underwater ground pound
+
 debug menu
 extended level bounds
 slope fix
