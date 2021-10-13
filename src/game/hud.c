@@ -272,6 +272,13 @@ void render_hud_mario_lives(void) {
     print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(54), HUD_TOP_Y, "%d", gHudDisplay.lives);
 }
 
+void render_hud_red_coins(void) {
+	u8 i;
+	for (i = 0; i != gRedCoinsCollected; i++){
+		print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(16 + (16 * i)), 40, ",");
+	}
+}
+
 /**
  * Renders the amount of coins collected.
  */
@@ -458,6 +465,7 @@ void render_hud(void) {
 
         if (hudDisplayFlags & HUD_DISPLAY_FLAG_COIN_COUNT) {
             render_hud_coins();
+			render_hud_red_coins();
         }
 
         if (hudDisplayFlags & HUD_DISPLAY_FLAG_STAR_COUNT) {

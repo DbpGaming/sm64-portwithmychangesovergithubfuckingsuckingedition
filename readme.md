@@ -9,6 +9,7 @@ slope fix
 ceiling fix
 ground pounds in long jump
 triple jumps do not need as much movement
+red coin hud (needs icon currently just uses mario head)
 
 you can find the credits for anything in the commits, i may add them to this readme later
 
