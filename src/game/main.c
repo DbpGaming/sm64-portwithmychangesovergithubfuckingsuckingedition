@@ -51,7 +51,12 @@ s8 sAudioEnabled = TRUE;
 u32 gNumVblanks = 0;
 s8 gResetTimer = 0;
 s8 gNmiResetBarsTimer = 0;
-s8 gDebugLevelSelect = FALSE;
+//#ifdef DEBUG_LEVEL_SELECT
+s8 gDebugLevelSelect = TRUE;
+//#else
+//s8 gDebugLevelSelect = FALSE;
+//#endif
+
 s8 D_8032C650 = 0;
 
 s8 gShowProfiler = FALSE;

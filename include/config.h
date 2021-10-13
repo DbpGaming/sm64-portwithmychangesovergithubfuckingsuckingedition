@@ -50,4 +50,7 @@
 #define BORDER_HEIGHT 0
 #endif
 
+// Enable debug level select
+#define DEBUG_LEVEL_SELECT
+
 #endif // CONFIG_H
