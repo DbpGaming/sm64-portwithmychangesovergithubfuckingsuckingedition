@@ -2,7 +2,7 @@
 this is a modified version of sm64-port with some changes and patches pre-applied
 currently it only does these few things
 
-## odyssey and sunshine movement
+#### 1. odyssey and sunshine movement
 	wall slide
 	dive hop
 	ground pound dive
@@ -12,14 +12,14 @@ currently it only does these few things
 	spin pound
 	underwater ground pound
 
-debug menu
-extended level bounds
-slope fix
-ceiling fix
-ground pounds in long jump
-triple jumps do not need as much movement
-red coin hud (needs icon currently just uses mario head)
-2 frame firsties
+2. debug menu
+3. extended level bounds
+4. slope fix
+5. ceiling fix
+6. ground pounds in long jump
+7. triple jumps do not need as much movement
+8. red coin hud (needs icon currently just uses mario head)
+9. 2 frame firsties
 
 you can find the credits for anything in the commits, i may add them to this readme later
 
