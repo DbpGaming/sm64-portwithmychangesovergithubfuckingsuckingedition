@@ -51,6 +51,6 @@
 #endif
 
 // Enable debug level select
-#define DEBUG_LEVEL_SELECT
+//#define DEBUG_LEVEL_SELECT
 
 #endif // CONFIG_H
