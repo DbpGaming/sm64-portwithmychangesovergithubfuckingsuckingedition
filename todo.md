@@ -22,7 +22,6 @@ thing's i still want to add to this engine but haven't yet
 	f3dzex
 
 ## Movement
-	2 frame firsties
 	galaxy spin jump
 	sm64ds delayed aerial dive boost
 	sm64ds looking mechanics
