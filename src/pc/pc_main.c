@@ -39,11 +39,11 @@ OSMesgQueue gSIEventMesgQueue;
 
 s8 gResetTimer;
 s8 gNmiResetBarsTimer;
-//#ifdef DEBUG_LEVEL_SELECT
+#ifdef DEBUG_LEVEL_SELECT
 s8 gDebugLevelSelect = TRUE;
-//#else
-//s8 gDebugLevelSelect = FALSE;
-//#endif
+#else
+s8 gDebugLevelSelect = FALSE;
+#endif
 s8 gShowProfiler;
 s8 gShowDebugText;
 
