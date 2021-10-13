@@ -275,7 +275,7 @@ void render_hud_mario_lives(void) {
 void render_hud_red_coins(void) {
 	u8 i;
 	for (i = 0; i != gRedCoinsCollected; i++){
-		print_text(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(16 + (16 * i)), 40, ",");
+		print_animated_red_coin(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(16 + (16 * i)), 16);
 	}
 }
 

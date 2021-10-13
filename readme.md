@@ -18,7 +18,7 @@ currently it only does these few things
 5. ceiling fix
 6. ground pounds in long jump
 7. triple jumps do not need as much movement
-8. red coin hud (needs icon currently just uses mario head)
+8. red coin hud
 9. 2 frame firsties
 
 you can find the credits for anything in the commits, i may add them to this readme later
