@@ -26,7 +26,7 @@ TARGET_WEB ?= 0
 #   ido - uses the SGI IRIS Development Option compiler, which is used to build
 #         an original matching N64 ROM
 #   gcc - uses the GNU C Compiler
-COMPILER ?= ido
+COMPILER ?= gcc
 $(eval $(call validate-option,COMPILER,ido gcc))
 
 # Automatic settings only for ports
@@ -97,23 +97,23 @@ $(eval $(call validate-option,VERSION,jp us eu sh))
 
 ifeq      ($(VERSION),jp)
   DEFINES   += VERSION_JP=1
-  OPT_FLAGS := -g
-  GRUCODE   ?= f3d_old
+  OPT_FLAGS := -Ofast
+  GRUCODE   ?= f3dzex
   VERSION_JP_US  ?= true
 else ifeq ($(VERSION),us)
   DEFINES   += VERSION_US=1
-  OPT_FLAGS := -g
-  GRUCODE   ?= f3d_old
+  OPT_FLAGS := -Ofast
+  GRUCODE   ?= f3dzex
   VERSION_JP_US  ?= true
 else ifeq ($(VERSION),eu)
   DEFINES   += VERSION_EU=1
-  OPT_FLAGS := -O2
-  GRUCODE   ?= f3d_new
+  OPT_FLAGS := -Ofast
+  GRUCODE   ?= f3dzex
   VERSION_JP_US  ?= false
 else ifeq ($(VERSION),sh)
   DEFINES   += VERSION_SH=1
-  OPT_FLAGS := -O2
-  GRUCODE   ?= f3d_new
+  OPT_FLAGS := -Ofast
+  GRUCODE   ?= f3dzex
   VERSION_JP_US  ?= false
 endif
 
@@ -932,7 +932,7 @@ $(ELF): $(O_FILES) $(MIO0_OBJ_FILES) $(SEG_FILES) $(BUILD_DIR)/$(LD_SCRIPT) unde
 # Build ROM
 $(ROM): $(ELF)
 	$(call print,Building ROM:,$<,$@)
-	$(V)$(OBJCOPY) --pad-to=0x800000 --gap-fill=0xFF $< $(@:.z64=.bin) -O binary
+	$(V)$(OBJCOPY) --pad-to=0x100000 --gap-fill=0xFF $< $(@:.z64=.bin) -O binary
 	$(V)$(N64CKSUM) $(@:.z64=.bin) $@
 
 $(BUILD_DIR)/$(TARGET).objdump: $(ELF)
