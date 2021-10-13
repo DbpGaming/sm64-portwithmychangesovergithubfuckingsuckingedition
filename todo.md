@@ -23,7 +23,6 @@ thing's i still want to add to this engine but haven't yet
 
 ## Movement
 	2 frame firsties
-	triple jumps should not need as much movement (already a thing in my hackersm64 fork)
 	galaxy spin jump
 	sm64ds delayed aerial dive boost
 	sm64ds looking mechanics
