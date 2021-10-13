@@ -22,7 +22,6 @@ thing's i still want to add to this engine but haven't yet
 	f3dzex
 
 ## Movement
-	ground pounds in long jump
 	2 frame firsties
 	triple jumps should not need as much movement (already a thing in my hackersm64 fork)
 	galaxy spin jump

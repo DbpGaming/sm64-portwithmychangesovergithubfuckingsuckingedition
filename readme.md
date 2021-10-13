@@ -7,6 +7,7 @@ debug menu
 extended level bounds
 slope fix
 ceiling fix
+ground pounds in long jump
 
 you can find the credits for anything in the commits, i may add them to this readme later
 
