@@ -21,6 +21,7 @@ currently it only does these few things
 8. red coin hud
 9. 2 frame firsties
 10. skip peach config
+11. mario silhouette (doesn't work on pc currently)
 
 you can find the credits for anything in the commits, i may add them to this readme later
 
