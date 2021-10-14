@@ -51,6 +51,10 @@ extern u8 *gGfxPoolEnd;
 #endif
 extern struct GfxPool *gGfxPool;
 extern u8 gControllerBits;
+extern u8 gCameraSpeed;
+extern u8 gWaterCamOverride;
+extern u8 gFlyingCamOverride;
+extern u8 gKeepCliffCam;
 extern s8 gEepromProbe;
 
 extern void (*gGoddardVblankCallback)(void);

@@ -22,6 +22,13 @@ currently it only does these few things
 9. 2 frame firsties
 10. skip peach config
 11. mario silhouette (doesn't work on pc currently)
+#### 12. reonucam3
+	right dpad for analog camera (should be changed to a bumper on pc port)
+	tap dpad right to center the camera behind mario (same as above)
+	dpad right plus joystick up to look over cliffs (also same as above)
+	second controller right stick also is analog camera on emulator (this should work for pc-port controllers automatically but doesn't yet)
+	down button to center to closest of 8 axis
+	note most of these features don't work on courses with hardcoded cameras, so these won't be a thing in vanilla levels.
 
 you can find the credits for anything in the commits, i may add them to this readme later
 

@@ -21,6 +21,7 @@ thing's i still want to add to this engine but haven't yet
 	sram support or just more optimized save files
 	remove goddard
 	dynamic framerate that has frameskipping under 30 and interpretation over 30
+	crash screen
 
 ## Movement
 	galaxy spin jump
@@ -35,7 +36,6 @@ thing's i still want to add to this engine but haven't yet
 	save and quit option outside of when collecting a star
 	No fall damage
 	Non stop stars
-	Reonucam
 	100 coin star disable
 	Exit course while moving
 	Rumble pack on all builds

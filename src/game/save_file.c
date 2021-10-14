@@ -15,7 +15,7 @@
 #define MENU_DATA_MAGIC 0x4849
 #define SAVE_FILE_MAGIC 0x4441
 
-STATIC_ASSERT(sizeof(struct SaveBuffer) == EEPROM_SIZE, "eeprom buffer size must match");
+//STATIC_ASSERT(sizeof(struct SaveBuffer) == EEPROM_SIZE, "eeprom buffer size must match");
 
 extern struct SaveBuffer gSaveBuffer;
 
@@ -561,8 +561,18 @@ void save_file_set_sound_mode(u16 mode) {
     save_main_menu_data();
 }
 
+void save_file_set_camera_speed(u8 speed) {
+    gSaveBuffer.menuData[0].cameraSpeedSetting = speed;
+    gMainMenuDataModified = TRUE;
+    save_main_menu_data();
+}
+
 u16 save_file_get_sound_mode(void) {
     return gSaveBuffer.menuData[0].soundMode;
+}
+
+u8 save_file_get_camera_speed(void) {
+    return gSaveBuffer.menuData[0].cameraSpeedSetting;
 }
 
 void save_file_move_cap_to_default_location(void) {

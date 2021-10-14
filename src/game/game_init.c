@@ -41,6 +41,12 @@ OSContStatus gControllerStatuses[4];
 OSContPad gControllerPads[4];
 u8 gControllerBits;
 s8 gEepromProbe; // Save Data Probe
+u8 gCameraSpeed = 2;
+
+u8 gWaterCamOverride;
+u8 gFlyingCamOverride;
+u8 gKeepCliffCam;
+s32 gCliffTimer;
 
 // OS Messages
 OSMesgQueue gGameVblankQueue;
