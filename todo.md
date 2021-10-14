@@ -17,9 +17,9 @@ thing's i still want to add to this engine but haven't yet
 	Coordinate overflow fix
 	Newest n64 os library
 	Newer compression
-	GCC by default and clang support
+	clang support
 	sram support or just more optimized save files
-	f3dzex
+	remove goddard
 
 ## Movement
 	galaxy spin jump
