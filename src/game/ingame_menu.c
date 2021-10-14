@@ -2133,12 +2133,15 @@ void shade_screen(void) {
 }
 
 void print_animated_red_coin(s16 x, s16 y) {
+	#ifdef ANIMATED_RED_COIN_HUD
     s32 timer = gGlobalTimer;
+	#endif
 
     create_dl_translation_matrix(MENU_MTX_PUSH, x, y, 0);
     create_dl_scale_matrix(MENU_MTX_NOPUSH, 0.2f, 0.2f, 1.0f);
     gDPSetRenderMode(gDisplayListHead++, G_RM_TEX_EDGE, G_RM_TEX_EDGE2);
 
+	#ifdef ANIMATED_RED_COIN_HUD
     switch (timer & 6) {
         case 0:
             gSPDisplayList(gDisplayListHead++, coin_seg3_dl_03007940);
@@ -2153,6 +2156,9 @@ void print_animated_red_coin(s16 x, s16 y) {
             gSPDisplayList(gDisplayListHead++, coin_seg3_dl_030079B8);
             break;
     }
+	#else
+		gSPDisplayList(gDisplayListHead++, coin_seg3_dl_03007940);
+	#endif
 
     gDPSetRenderMode(gDisplayListHead++, G_RM_AA_ZB_OPA_SURF, G_RM_AA_ZB_OPA_SURF2);
     gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);

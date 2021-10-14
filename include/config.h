@@ -56,4 +56,7 @@
 // skip peach cutscene
 #define SKIP_PEACH
 
+// animated red coin hud
+// #define ANIMATED_RED_COIN_HUD
+
 #endif // CONFIG_H
