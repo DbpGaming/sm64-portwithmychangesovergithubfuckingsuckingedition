@@ -20,6 +20,7 @@ currently it only does these few things
 7. triple jumps do not need as much movement
 8. red coin hud
 9. 2 frame firsties
+10. skip peach config
 
 you can find the credits for anything in the commits, i may add them to this readme later
 

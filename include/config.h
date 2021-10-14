@@ -53,4 +53,7 @@
 // Enable debug level select
 //#define DEBUG_LEVEL_SELECT
 
+// skip peach cutscene
+#define SKIP_PEACH
+
 #endif // CONFIG_H
