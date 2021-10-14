@@ -20,6 +20,7 @@ thing's i still want to add to this engine but haven't yet
 	clang support
 	sram support or just more optimized save files
 	remove goddard
+	dynamic framerate that has frameskipping under 30 and interpretation over 30
 
 ## Movement
 	galaxy spin jump
