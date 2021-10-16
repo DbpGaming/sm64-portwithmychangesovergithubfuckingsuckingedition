@@ -35,6 +35,8 @@ currently it only does these few things
 15. shindou poles
 16. clearram on startup
 17. larger border on n64
+18. remove lives
+19. hud respects borders
 
 you can find the credits for anything in the commits, i may add them to this readme later
 

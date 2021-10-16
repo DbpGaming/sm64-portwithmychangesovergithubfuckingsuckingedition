@@ -250,16 +250,10 @@ void render_hud_power_meter(void) {
     sPowerMeterVisibleTimer += 1;
 }
 
-#ifdef VERSION_JP
-#define HUD_TOP_Y 210
-#else
-#define HUD_TOP_Y 209
-#endif
-
 void render_hud_red_coins(void) {
 	u8 i;
 	for (i = 0; i != gRedCoinsCollected; i++){
-		print_animated_red_coin(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(16 + (16 * i)), 16);
+		print_animated_red_coin(GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(16 + (16 * i)), HUD_BOTTOM_Y);
 	}
 }
 
