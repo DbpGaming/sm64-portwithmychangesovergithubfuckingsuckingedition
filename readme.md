@@ -32,6 +32,7 @@ currently it only does these few things
 
 13. Non stop stars
 14. Exit course while moving
+15. shindou poles
 
 you can find the credits for anything in the commits, i may add them to this readme later
 
