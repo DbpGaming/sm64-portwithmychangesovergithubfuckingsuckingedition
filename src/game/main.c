@@ -1,4 +1,6 @@
 #include <ultra64.h>
+#include <PR/os.h>
+#include <PR/os_vi.h>
 #include <stdio.h>
 
 #include "sm64.h"
@@ -456,8 +458,13 @@ void thread1_idle(UNUSED void *arg) {
     }
 }
 
+void ClearRAM(void) {
+    bzero(_mainSegmentEnd, (size_t)osMemSize - (size_t)OS_K0_TO_PHYSICAL(_mainSegmentEnd));
+}
+
 void main_func(void) {
-    UNUSED u8 pad[64]; // needed to pad the stack
+    //UNUSED u8 pad[64]; // needed to pad the stack
+	ClearRAM();
 
     osInitialize();
     stub_main_1();
