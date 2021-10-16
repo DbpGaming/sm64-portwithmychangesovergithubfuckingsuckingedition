@@ -38,6 +38,7 @@ currently it only does these few things
 18. remove lives
 19. hud respects borders
 20. 100 coin star value and disable
+21. No false ledgegrabs
 
 you can find the credits for anything in the commits, i may add them to this readme later
 
