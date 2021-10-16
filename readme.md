@@ -37,6 +37,7 @@ currently it only does these few things
 17. larger border on n64
 18. remove lives
 19. hud respects borders
+20. 100 coin star value and disable
 
 you can find the credits for anything in the commits, i may add them to this readme later
 

@@ -50,8 +50,12 @@
 // skip peach cutscene
 #define SKIP_PEACH
 
+//hud locations
 #define HUD_TOP_Y 210-BORDER_HEIGHT
 #define HUD_BOTTOM_Y 16+BORDER_HEIGHT
+
+//coin star
+#define COIN_STAR
 
 // animated red coin hud
 // #define ANIMATED_RED_COIN_HUD
