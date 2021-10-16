@@ -33,6 +33,8 @@ currently it only does these few things
 13. Non stop stars
 14. Exit course while moving
 15. shindou poles
+16. clearram on startup
+17. larger border on n64
 
 you can find the credits for anything in the commits, i may add them to this readme later
 
