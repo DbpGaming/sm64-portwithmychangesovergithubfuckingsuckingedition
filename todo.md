@@ -36,7 +36,6 @@ thing's i still want to add to this engine but haven't yet
 	save and quit option outside of when collecting a star
 	No fall damage
 	100 coin star disable
-	Exit course while moving
 	Rumble pack on all builds
 
 ## Powerups

@@ -31,6 +31,7 @@ currently it only does these few things
 	note most of these features don't work on courses with hardcoded cameras, so these won't be a thing in vanilla levels.
 
 13. Non stop stars
+14. Exit course while moving
 
 you can find the credits for anything in the commits, i may add them to this readme later
 
