@@ -3,7 +3,6 @@ thing's i still want to add to this engine but haven't yet
 
 ## Fixes
 	Graph optimizations
-	Jump kick fix
 	46 degree wall kick fix
 	pole fix
 	Hanging fix
