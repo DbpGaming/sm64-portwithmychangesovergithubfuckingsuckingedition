@@ -35,7 +35,6 @@ thing's i still want to add to this engine but haven't yet
 	global coins, that save to your save file
 	save and quit option outside of when collecting a star
 	No fall damage
-	Non stop stars
 	100 coin star disable
 	Exit course while moving
 	Rumble pack on all builds
