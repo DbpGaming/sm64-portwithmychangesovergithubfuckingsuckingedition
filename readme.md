@@ -40,6 +40,7 @@ currently it only does these few things
 20. 100 coin star value and disable
 21. No false ledgegrabs
 22. jump kick fix
+23. hanging fix
 
 you can find the credits for anything in the commits, i may add them to this readme later
 

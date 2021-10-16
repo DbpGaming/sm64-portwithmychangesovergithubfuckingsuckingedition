@@ -5,7 +5,6 @@ thing's i still want to add to this engine but haven't yet
 	Graph optimizations
 	46 degree wall kick fix
 	pole fix
-	Hanging fix
 	Automatic collision distance
 	Expanded audio heap
 	Castle music fix
