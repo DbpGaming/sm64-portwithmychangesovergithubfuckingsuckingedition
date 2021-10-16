@@ -55,7 +55,7 @@
 #define HUD_BOTTOM_Y 16+BORDER_HEIGHT
 
 //coin star
-#define COIN_STAR
+#define COIN_STAR 100
 
 // animated red coin hud
 // #define ANIMATED_RED_COIN_HUD
