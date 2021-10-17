@@ -103,6 +103,6 @@
 
 //make this approximately (amount of collision cells) + (SURFACE_POOL_SIZE * 3)
 //22000 should work fine for a 2x extended stage, the vanilla value is 7000
-#define SURFACE_NODE_POOL_SIZE 48000
+#define SURFACE_NODE_POOL_SIZE SURFACE_POOL_SIZE * 3
 
 #endif // CONFIG_H
