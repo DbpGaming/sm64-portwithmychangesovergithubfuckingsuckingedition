@@ -28,7 +28,6 @@ thing's i still want to add to this engine but haven't yet
 	spin jumps dont drop objects
 
 ## Engine
-	8 stars per level (using the cannon bits)
 	global coins, that save to your save file
 	save and quit option outside of when collecting a star
 	No fall damage

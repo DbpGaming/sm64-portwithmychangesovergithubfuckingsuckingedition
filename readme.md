@@ -41,6 +41,7 @@ currently it only does these few things
 21. No false ledgegrabs
 22. jump kick fix
 23. hanging fix
+24. 8 stars to level (todo maybe 8 acts and fixing cannons)
 
 you can find the credits for anything in the commits, i may add them to this readme later
 
