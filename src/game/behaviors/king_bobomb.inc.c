@@ -21,7 +21,7 @@ void bhv_bobomb_anchor_mario_loop(void) {
 }
 
 void king_bobomb_act_0(void) {
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     o->oForwardVel = 0.0f;
     o->oVelY = 0.0f;
 #endif
@@ -171,7 +171,7 @@ void king_bobomb_act_6(void) {
 
 void king_bobomb_act_7(void) {
     cur_obj_init_animation_with_sound(2);
-    if (cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_UP, 
+    if (cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_UP,
         DIALOG_FLAG_TEXT_DEFAULT, CUTSCENE_DIALOG, DIALOG_116)) {
         create_sound_spawner(SOUND_OBJ_KING_WHOMP_DEATH);
         cur_obj_hide();
@@ -179,7 +179,7 @@ void king_bobomb_act_7(void) {
         spawn_mist_particles_variable(0, 0, 200.0f);
         spawn_triangle_break_particles(20, MODEL_DIRT_ANIMATION, 3.0f, 4);
         cur_obj_shake_screen(SHAKE_POS_SMALL);
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
         cur_obj_spawn_star_at_y_offset(2000.0f, 4500.0f, -4500.0f, 200.0f);
 #else
         o->oPosY += 100.0f;
@@ -264,7 +264,7 @@ void king_bobomb_act_5(void) { // bobomb returns home
                 o->oSubAction++;
             break;
         case 4:
-            if (cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_UP, 
+            if (cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_UP,
                 DIALOG_FLAG_TURN_TO_MARIO, CUTSCENE_DIALOG, DIALOG_128))
                 o->oAction = 2;
             break;

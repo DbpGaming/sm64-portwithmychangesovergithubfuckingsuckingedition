@@ -14,7 +14,7 @@ void bhv_mips_init(void) {
     if (save_file_get_total_star_count(gCurrSaveFileNum - 1, COURSE_MIN - 1, COURSE_MAX - 1) >= 15
         && !(starFlags & SAVE_FLAG_TO_STAR_FLAG(SAVE_FLAG_COLLECTED_MIPS_STAR_1))) {
         o->oBehParams2ndByte = 0;
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
         o->oMipsForwardVelocity = 40.0f;
 #endif
     }
@@ -22,7 +22,7 @@ void bhv_mips_init(void) {
     else if (save_file_get_total_star_count(gCurrSaveFileNum - 1, COURSE_MIN - 1, COURSE_MAX - 1) >= 50
              && !(starFlags & SAVE_FLAG_TO_STAR_FLAG(SAVE_FLAG_COLLECTED_MIPS_STAR_2))) {
         o->oBehParams2ndByte = 1;
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
         o->oMipsForwardVelocity = 45.0f;
 #endif
     } else {
@@ -32,7 +32,7 @@ void bhv_mips_init(void) {
 
     o->oInteractionSubtype = INT_SUBTYPE_HOLDABLE_NPC;
 
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     o->oGravity = 15.0f;
 #else
     o->oGravity = 2.5f;
@@ -126,7 +126,7 @@ void bhv_mips_act_follow_path(void) {
     followStatus = cur_obj_follow_path(followStatus);
 
     // Update velocity and angle and do movement.
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     o->oForwardVel = o->oMipsForwardVelocity;
 #else
     o->oForwardVel = 45.0f;

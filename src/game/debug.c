@@ -162,7 +162,7 @@ void print_debug_top_down_normal(const char *str, s32 number) {
     }
 }
 
-#ifndef VERSION_EU
+#ifndef VERSION_EU //fixme
 void print_mapinfo(void) {
     struct Surface *pfloor;
     f32 bgY;
@@ -392,7 +392,7 @@ UNUSED static void try_change_debug_page(void) {
  * sDebugSysCursor. This is used to adjust enemy and effect behaviors
  * on the fly. (unused)
  */
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 UNUSED static
 #endif
 void try_modify_debug_controls(void) {
@@ -526,7 +526,7 @@ void try_do_mario_debug_object_spawn(void) {
 
 // TODO: figure out what this is
 void debug_print_obj_move_flags(void) {
-#ifndef VERSION_EU // TODO: Is there a better way to diff this? static EU doesn't seem to work.
+#ifndef VERSION_EU // TODO: Is there a better way to diff this? static EU doesn't seem to work. //fixme
     if (gCurrentObject->oMoveFlags & OBJ_MOVE_LANDED) {
         print_debug_top_down_objectinfo("BOUND   %x", gCurrentObject->oMoveFlags);
     }

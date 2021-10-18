@@ -1,6 +1,6 @@
 // == debug table ==
 
-#ifndef VERSION_EU
+#ifndef VERSION_EU //fixme
 
 // (this wasn't translated for US, and was removed in EU)
 

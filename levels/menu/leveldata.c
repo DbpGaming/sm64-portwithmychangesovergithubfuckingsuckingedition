@@ -5,7 +5,7 @@
 #include "surface_terrains.h"
 #include "types.h"
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 #include "text_strings.h"
 #endif
 #include "make_const_nonconst.h"
@@ -607,7 +607,7 @@ const Texture *const menu_hud_lut[] = {
     texture_menu_hud_char_katakana_sa,       texture_menu_hud_char_katakana_u,         texture_menu_hud_char_katakana_n, texture_menu_hud_char_kana_dakuten_do,
 };
 
-#if defined(VERSION_JP) || defined(VERSION_SH)
+#if defined(VERSION_JP) || defined(VERSION_SH) //fixme
 UNUSED static const u64 menu_unused_0 = 0;
 
 // 0x0700AC48
@@ -1332,7 +1332,7 @@ ALIGNED8 static const Texture texture_menu_font_char_C[] = {
 #include "levels/menu/main_menu_seg7_us.0AF40.ia8.inc.c"
 };
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 // 0x0700AF80
 ALIGNED8 static const Texture texture_menu_font_char_D[] = {
 #include "levels/menu/main_menu_seg7_eu.0AF80.ia8.inc.c"
@@ -1476,7 +1476,7 @@ ALIGNED8 static const Texture texture_menu_font_char_dash[] = {
 #include "levels/menu/main_menu_seg7_us.0B600.ia8.inc.c"
 };
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 // 0x0700B640
 ALIGNED8 static const Texture texture_menu_font_char_comma[] = {
 #include "levels/menu/main_menu_seg7_eu.0B640.ia8.inc.c"
@@ -1531,7 +1531,7 @@ ALIGNED8 static const Texture texture_menu_font_char_ampersand[] = {
 };
 #endif
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 // 0x0700B840
 ALIGNED8 static const Texture texture_menu_font_char_umlaut[] = {
 #include "levels/menu/main_menu_seg7_eu.0B840.ia8.inc.c"
@@ -1551,7 +1551,7 @@ ALIGNED8 static const Texture texture_menu_font_char_colon[] = {
 // Menu small font print table
 // 0x0700CD08
 const Texture *const menu_font_lut[] = {
-#if defined(VERSION_JP) || defined(VERSION_SH)
+#if defined(VERSION_JP) || defined(VERSION_SH) //fixme
     texture_menu_font_char_jp_0, texture_menu_font_char_jp_1, texture_menu_font_char_jp_2, texture_menu_font_char_jp_3,
     texture_menu_font_char_jp_4, texture_menu_font_char_jp_5, texture_menu_font_char_jp_6, texture_menu_font_char_jp_7,
     texture_menu_font_char_jp_8, texture_menu_font_char_jp_9, texture_menu_font_char_jp_A, texture_menu_font_char_jp_B,
@@ -1674,7 +1674,7 @@ const Texture *const menu_font_lut[] = {
           0x0,       0x0,       0x0,       0x0,
           0x0,       0x0,       0x0,       0x0,
           0x0,       0x0,       0x0,       0x0,
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
           0x0, texture_menu_font_char_ampersand, texture_menu_font_char_colon,       0x0,
           0x0, texture_menu_font_char_umlaut,       0x0,       0x0,
           0x0, texture_menu_font_char_cedilla_mayus,       0x0,       0x0,
@@ -1719,7 +1719,7 @@ const Gfx dl_menu_ia8_text_end[] = {
 
 UNUSED static const u64 menu_unused_1 = 0;
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 
 // 0x0700BDA0 - 0x0700CDA0
 ALIGNED8 static const Texture texture_menu_course_upper[] = {
@@ -1776,7 +1776,7 @@ const Gfx dl_menu_rgba16_wood_course[] = {
     gsDPSetCombineMode(G_CC_DECALRGBA, G_CC_DECALRGBA),
     gsSPTexture(0x8000, 0x8000, 0, G_TX_RENDERTILE, G_ON),
     gsDPSetRenderMode(G_RM_AA_TEX_EDGE, G_RM_AA_TEX_EDGE2),
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     gsSPEndDisplayList(),
 };
 const Gfx dl_menu_rgba16_wood_course_end[] = {
@@ -1804,7 +1804,7 @@ const Gfx dl_menu_rgba16_wood_course_end[] = {
     gsSPEndDisplayList(),
 };
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 // 0x0700FEF0 - 0x0700FF00
 const Gfx dl_menu_texture_course_upper[] = {
     gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 1, texture_menu_course_upper),
@@ -1839,7 +1839,7 @@ const Collision main_menu_seg7_collision[] = {
     COL_END(),
 };
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 
 // Duplicate course name tables; the main menu needs all languages loaded at
 // once since it switches language, so the copies in segment 19 aren't good

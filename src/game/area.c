@@ -80,7 +80,7 @@ Vp D_8032CF00 = { {
     { 640, 480, 511, 0 },
 } };
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 const char *gNoControllerMsg[] = {
     "NO CONTROLLER",
     "MANETTE DEBRANCHEE",
@@ -106,23 +106,19 @@ void set_warp_transition_rgb(u8 red, u8 green, u8 blue) {
 }
 
 void print_intro_text(void) {
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     s32 language = eu_get_language();
 #endif
     if ((gGlobalTimer & 0x1F) < 20) {
         if (gControllerBits == 0) {
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
             print_text_centered(SCREEN_WIDTH / 2, 20, gNoControllerMsg[language]);
 #else
             print_text_centered(SCREEN_WIDTH / 2, 20, "NO CONTROLLER");
 #endif
         } else {
-#ifdef VERSION_EU
-            print_text(20, 20, "START");
-#else
             print_text_centered(60, 38, "PRESS");
             print_text_centered(60, 20, "START");
-#endif
         }
     }
 }

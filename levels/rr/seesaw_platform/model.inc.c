@@ -1,7 +1,7 @@
 // US: 0x0701B0C8
 // 0x0701B290 - 0x0701B370
 static const Vtx rr_seg7_vertex_0701B290[] = {
-#ifdef VERSION_JP
+#ifdef VERSION_JP //fixme
     {{{  -306,    102,   -818}, 0, {  3716,   -714}, {0xaf, 0xcf, 0xc1, 0xff}}},
     {{{  -306,    102,    819}, 0, {   990,   2010}, {0xaf, 0xcf, 0xc1, 0xff}}},
     {{{   307,    102,    819}, 0, {     0,    990}, {0xaf, 0xcf, 0xc1, 0xff}}},

@@ -29,7 +29,7 @@ void bhv_bowser_key_loop(void) {
         if (o->oMoveFlags & OBJ_MOVE_ON_GROUND)
             o->oAction++;
         else if (o->oMoveFlags & OBJ_MOVE_LANDED)
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
             cur_obj_play_sound_2(SOUND_GENERAL_UNKNOWN3_2);
 #else
             cur_obj_play_sound_2(SOUND_GENERAL_UNKNOWN3_LOWPRIO);

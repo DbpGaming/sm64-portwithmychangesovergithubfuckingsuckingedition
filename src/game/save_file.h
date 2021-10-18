@@ -53,7 +53,7 @@ struct MainMenuSaveData
     u32 coinScoreAges[NUM_SAVE_FILES];
     u16 soundMode;
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     u16 language;
 #define SUBTRAHEND 8
 #else
@@ -160,7 +160,7 @@ void disable_warp_checkpoint(void);
 void check_if_should_set_warp_checkpoint(struct WarpNode *warpNode);
 s32 check_warp_checkpoint(struct WarpNode *warpNode);
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 enum EuLanguages {
     LANGUAGE_ENGLISH,
     LANGUAGE_FRENCH,

@@ -1,4 +1,4 @@
-#ifdef VERSION_JP
+#ifdef VERSION_JP //fixme
 #define VAL_DIFF 25000
 #else
 #define VAL_DIFF 60000

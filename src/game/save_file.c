@@ -592,7 +592,7 @@ void save_file_move_cap_to_default_location(void) {
     }
 }
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 void eu_set_language(u16 language) {
     gSaveBuffer.menuData[0].language = language;
     gMainMenuDataModified = TRUE;

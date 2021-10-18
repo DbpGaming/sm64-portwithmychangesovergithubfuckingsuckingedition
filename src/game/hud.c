@@ -266,11 +266,7 @@ void render_hud_coins(void) {
     print_text_fmt_int(198, HUD_TOP_Y, "%d", gHudDisplay.coins);
 }
 
-#ifdef VERSION_JP
-#define HUD_STARS_X 73
-#else
 #define HUD_STARS_X 78
-#endif
 
 /**
  * Renders the amount of stars collected.
@@ -319,26 +315,10 @@ void render_hud_timer(void) {
 
     hudLUT = segmented_to_virtual(&main_hud_lut);
     timerValFrames = gHudDisplay.timer;
-#ifdef VERSION_EU
-    switch (eu_get_language()) {
-        case LANGUAGE_ENGLISH:
-            print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(150), 185, "TIME");
-            break;
-        case LANGUAGE_FRENCH:
-            print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(155), 185, "TEMPS");
-            break;
-        case LANGUAGE_GERMAN:
-            print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(150), 185, "ZEIT");
-            break;
-    }
-#endif
     timerMins = timerValFrames / (30 * 60);
     timerSecs = (timerValFrames - (timerMins * 1800)) / 30;
 
     timerFracSecs = ((timerValFrames - (timerMins * 1800) - (timerSecs * 30)) & 0xFFFF) / 3;
-#ifndef VERSION_EU
-    print_text(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(150), 185, "TIME");
-#endif
     print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(91), 185, "%0d", timerMins);
     print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(71), 185, "%02d", timerSecs);
     print_text_fmt_int(GFX_DIMENSIONS_RECT_FROM_RIGHT_EDGE(37), 185, "%d", timerFracSecs);
@@ -362,7 +342,7 @@ void set_hud_camera_status(s16 status) {
  */
 void render_hud(void) {
     s16 hudDisplayFlags;
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     Mtx *mtx;
 #endif
 
@@ -373,7 +353,7 @@ void render_hud(void) {
         sPowerMeterStoredHealth = 8;
         sPowerMeterVisibleTimer = 0;
     } else {
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
         // basically create_dl_ortho_matrix but guOrtho screen width is different
 
         mtx = alloc_display_list(sizeof(*mtx));

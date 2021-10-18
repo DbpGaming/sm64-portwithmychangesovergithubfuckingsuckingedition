@@ -106,7 +106,7 @@ static const Vtx rr_seg7_vertex_07002688[] = {
 
 // 0x070026F8 - 0x070027F8
 static const Vtx rr_seg7_vertex_070026F8[] = {
-#ifdef VERSION_JP
+#ifdef VERSION_JP  //fixme
     {{{  1636,    512,   -792}, 0, {  2694,   3714}, {0x96, 0x96, 0x96, 0xff}}},
     {{{   817,    717,   -792}, 0, {   650,    308}, {0x96, 0x96, 0x96, 0xff}}},
     {{{   817,    512,   -792}, 0, {     0,    990}, {0x96, 0x96, 0x96, 0xff}}},

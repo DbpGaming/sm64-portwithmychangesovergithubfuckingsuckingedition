@@ -138,7 +138,7 @@ ALIGNED8 static const Texture texture_hud_char_U[] = {
 #include "textures/segment2/segment2.03C00.rgba16.inc.c"
 };
 
-#if defined(VERSION_JP) || defined(VERSION_EU) || defined(VERSION_SH)
+#if defined(VERSION_JP) || defined(VERSION_EU) || defined(VERSION_SH)  //fixme make all roms have complete text set
 ALIGNED8 static const Texture texture_hud_char_V[] = {
 #include "textures/segment2/segment2.03E00.rgba16.inc.c"
 };

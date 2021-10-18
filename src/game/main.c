@@ -229,15 +229,9 @@ void handle_vblank(void) {
 
     stub_main_3();
     gNumVblanks++;
-#ifdef VERSION_SH
     if (gResetTimer > 0 && gResetTimer < 100) {
         gResetTimer++;
     }
-#else
-    if (gResetTimer > 0) {
-        gResetTimer++;
-    }
-#endif
 
     receive_new_tasks();
 
@@ -426,12 +420,12 @@ void turn_off_audio(void) {
  * Initialize hardware, start main thread, then idle.
  */
 void thread1_idle(UNUSED void *arg) {
-#if defined(VERSION_US) || defined(VERSION_SH)
+#if defined(VERSION_US) || defined(VERSION_SH) //fixme
     s32 sp24 = osTvType;
 #endif
 
     osCreateViManager(OS_PRIORITY_VIMGR);
-#if defined(VERSION_US) || defined(VERSION_SH)
+#if defined(VERSION_US) || defined(VERSION_SH) //fixme
     if (sp24 == TV_TYPE_NTSC) {
         osViSetMode(&osViModeTable[OS_VI_NTSC_LAN1]);
     } else {
@@ -439,7 +433,7 @@ void thread1_idle(UNUSED void *arg) {
     }
 #elif defined(VERSION_JP)
     osViSetMode(&osViModeTable[OS_VI_NTSC_LAN1]);
-#else // VERSION_EU
+#else // VERSION_EU //fixme
     osViSetMode(&osViModeTable[OS_VI_PAL_LAN1]);
 #endif
     osViBlack(TRUE);

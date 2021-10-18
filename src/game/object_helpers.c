@@ -94,7 +94,7 @@ Gfx *geo_update_layer_transparency(s32 callContext, struct GraphNode *node, UNUS
 
             objectGraphNode->oAnimState = 1;
 
-#ifdef VERSION_JP
+#ifdef VERSION_JP //fixme
             if (currentGraphNode->parameter == 10) {
                 if (gDebugInfo[DEBUG_PAGE_ENEMYINFO][3]) {
                     gDPSetAlphaCompare(dlHead++, G_AC_DITHER);
@@ -1062,7 +1062,7 @@ void cur_obj_set_y_vel_and_animation(f32 yVel, s32 animIndex) {
 void cur_obj_unrender_set_action_and_anim(s32 animIndex, s32 action) {
     cur_obj_become_intangible();
     cur_obj_disable_rendering();
-    
+
     // only set animation if non-negative value
     if (animIndex >= 0) {
         cur_obj_init_animation_with_sound(animIndex);
@@ -1740,7 +1740,7 @@ static void cur_obj_update_floor(void) {
         if (floor->type == SURFACE_BURNING) {
             o->oMoveFlags |= OBJ_MOVE_ABOVE_LAVA;
         }
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
         else if (floor->type == SURFACE_DEATH_PLANE) {
             //! This misses SURFACE_VERTICAL_WIND (and maybe SURFACE_WARP)
             o->oMoveFlags |= OBJ_MOVE_ABOVE_DEATH_BARRIER;
@@ -1756,7 +1756,7 @@ static void cur_obj_update_floor(void) {
 }
 
 static void cur_obj_update_floor_and_resolve_wall_collisions(s16 steepSlopeDegrees) {
-#ifdef VERSION_JP
+#ifdef VERSION_JP //fixme
     o->oMoveFlags &= ~OBJ_MOVE_ABOVE_LAVA;
 #else
     o->oMoveFlags &= ~(OBJ_MOVE_ABOVE_LAVA | OBJ_MOVE_ABOVE_DEATH_BARRIER);
@@ -2581,7 +2581,6 @@ s32 cur_obj_update_dialog(s32 actionArg, s32 dialogFlags, s32 dialogID, UNUSED s
     UNUSED s32 doneTurning = TRUE;
 
     switch (o->oDialogState) {
-#if BUGFIX_DIALOG_TIME_STOP
         case DIALOG_STATUS_ENABLE_TIME_STOP:
             // Patched :(
             // Wait for Mario to be ready to speak, and then enable time stop
@@ -2594,18 +2593,6 @@ s32 cur_obj_update_dialog(s32 actionArg, s32 dialogFlags, s32 dialogID, UNUSED s
             }
             // Fall through so that Mario's action is interrupted immediately
             // after time is stopped
-#else
-        case DIALOG_STATUS_ENABLE_TIME_STOP:
-            //! We enable time stop even if Mario is not ready to speak. This
-            //  allows us to move during time stop as long as Mario never enters
-            //  an action that can be interrupted with text.
-            if (gMarioState->health >= 0x100) {
-                gTimeStopState |= TIME_STOP_ENABLED;
-                o->activeFlags |= ACTIVE_FLAG_INITIATED_TIME_STOP;
-                o->oDialogState++;
-            }
-            break;
-#endif
         case DIALOG_STATUS_INTERRUPT:
             // Interrupt until Mario is actually speaking with the NPC
             if (set_mario_npc_dialog(actionArg) == MARIO_DIALOG_STATUS_SPEAK) {
@@ -2666,7 +2653,6 @@ s32 cur_obj_update_dialog_with_cutscene(s32 actionArg, s32 dialogFlags, s32 cuts
     s32 doneTurning = TRUE;
 
     switch (o->oDialogState) {
-#if BUGFIX_DIALOG_TIME_STOP
         case DIALOG_STATUS_ENABLE_TIME_STOP:
             // Wait for Mario to be ready to speak, and then enable time stop
             if (mario_ready_to_speak() || gMarioState->action == ACT_READING_NPC_DIALOG) {
@@ -2679,19 +2665,6 @@ s32 cur_obj_update_dialog_with_cutscene(s32 actionArg, s32 dialogFlags, s32 cuts
             }
             // Fall through so that Mario's action is interrupted immediately
             // after time is stopped
-#else
-        case DIALOG_STATUS_ENABLE_TIME_STOP:
-            //! We enable time stop even if Mario is not ready to speak. This
-            //  allows us to move during time stop as long as Mario never enters
-            //  an action that can be interrupted with text.
-            if (gMarioState->health >= 0x0100) {
-                gTimeStopState |= TIME_STOP_ENABLED;
-                o->activeFlags |= ACTIVE_FLAG_INITIATED_TIME_STOP;
-                o->oDialogState++;
-                o->oDialogResponse = DIALOG_RESPONSE_NONE;
-            }
-            break;
-#endif
         case DIALOG_STATUS_INTERRUPT:
             // Additional flag that makes the NPC rotate towards to Mario
             if (dialogFlags & DIALOG_FLAG_TURN_TO_MARIO) {
@@ -2911,7 +2884,7 @@ void cur_obj_spawn_loot_blue_coin(void) {
     }
 }
 
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
 void cur_obj_spawn_star_at_y_offset(f32 targetX, f32 targetY, f32 targetZ, f32 offsetY) {
     f32 objectPosY = o->oPosY;
     o->oPosY += offsetY + gDebugInfo[5][0];

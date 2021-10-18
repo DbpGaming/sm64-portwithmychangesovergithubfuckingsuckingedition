@@ -1,6 +1,6 @@
 // 0x0702A9A8 - 0x0702E9D8
 const Collision rr_seg7_collision_level[] = {
-#ifdef VERSION_JP
+#ifdef VERSION_JP //fixme
     COL_INIT(),
     COL_VERTEX_INIT(0x454),
     COL_VERTEX(-6677, -1782, 270),

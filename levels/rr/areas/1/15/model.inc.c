@@ -1,6 +1,6 @@
 // 0x070127E8 - 0x070128D8
 static const Vtx rr_seg7_vertex_070127E8[] = {
-#ifdef VERSION_JP
+#ifdef VERSION_JP  //fixme
     {{{   768,   -869,  -2252}, 0, {  4056,  -1054}, {0x8c, 0x8c, 0x8c, 0xff}}},
     {{{   358,   -869,  -1842}, 0, {  2012,  -1054}, {0x8c, 0x8c, 0x8c, 0xff}}},
     {{{   768,   -869,  -1842}, 0, {  3034,  -2076}, {0x8c, 0x8c, 0x8c, 0xff}}},

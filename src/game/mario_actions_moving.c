@@ -12,6 +12,7 @@
 #include "memory.h"
 #include "behavior_data.h"
 #include "rumble_init.h"
+#include "config.h"
 
 struct LandingAction {
     s16 numFrames;
@@ -1436,7 +1437,7 @@ void common_slide_action(struct MarioState *m, u32 endAction, u32 airAction, s32
 
         case GROUND_STEP_HIT_WALL:
             if (!mario_floor_is_slippery(m)) {
-#ifdef VERSION_JP
+#ifdef VERSION_JP //fixme
                 m->particleFlags |= PARTICLE_VERTICAL_STAR;
 #else
                 if (m->forwardVel > 16.0f) {
@@ -1599,7 +1600,7 @@ s32 act_roll(struct MarioState *m) {
     }
 
     if (m->input & INPUT_B_PRESSED){
-#ifdef VERSION_SH
+#if ENABLE_RUMBLE
         queue_rumble_data(5, 80);
 #endif
         return set_jumping_action(m, ACT_FORWARD_ROLLOUT, 0);
@@ -1742,7 +1743,7 @@ s32 common_ground_knockback_action(struct MarioState *m, s32 animation, s32 arg2
     if (arg4 > 0) {
         play_sound_if_no_flag(m, SOUND_MARIO_ATTACKED, MARIO_MARIO_SOUND_PLAYED);
     } else {
-#ifdef VERSION_JP
+#ifdef VERSION_JP //fixme
         play_sound_if_no_flag(m, SOUND_MARIO_OOOF, MARIO_MARIO_SOUND_PLAYED);
 #else
         play_sound_if_no_flag(m, SOUND_MARIO_OOOF2, MARIO_MARIO_SOUND_PLAYED);
@@ -1792,7 +1793,7 @@ s32 act_hard_backward_ground_kb(struct MarioState *m) {
         set_mario_action(m, ACT_DEATH_ON_BACK, 0);
     }
 
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     if (animFrame == 54 && m->prevAction == ACT_SPECIAL_DEATH_EXIT) {
         play_sound(SOUND_MARIO_MAMA_MIA, m->marioObj->header.gfx.cameraToObject);
     }
@@ -1992,7 +1993,7 @@ s32 act_hold_freefall_land(struct MarioState *m) {
 }
 
 s32 act_long_jump_land(struct MarioState *m) {
-#ifdef VERSION_SH
+#if BLJ_FIX
     // BLJ (Backwards Long Jump) speed build up fix, crushing SimpleFlips's dreams since July 1997
     if (m->forwardVel < 0.0f) {
         m->forwardVel = 0.0f;

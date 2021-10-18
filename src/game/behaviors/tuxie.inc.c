@@ -54,7 +54,7 @@ void tuxies_mother_act_1(void) {
                     dialogID = DIALOG_058;
                 else
                     dialogID = DIALOG_059;
-                if (cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_UP, 
+                if (cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_UP,
                         DIALOG_FLAG_TURN_TO_MARIO, CUTSCENE_DIALOG, dialogID)) {
                     if (dialogID == DIALOG_058)
                         o->oSubAction = 1;
@@ -77,7 +77,7 @@ void tuxies_mother_act_1(void) {
                 // or 1, which is not affected by the bitwise AND.
                 o->prevObj->OBJECT_FIELD_S32(o->oInteractionSubtype) &= ~INT_SUBTYPE_DROP_IMMEDIATELY;
                 obj_set_behavior(o->prevObj, bhvUnused20E0);
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
                 cur_obj_spawn_star_at_y_offset(3167.0f, -4300.0f, 5108.0f, 200.0f);
 #else
                 spawn_default_star(3500.0f, -4300.0f, 4650.0f);
@@ -118,7 +118,7 @@ void tuxies_mother_act_0(void) {
                         o->oSubAction++;
                 break;
             case 1:
-                if (cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_UP, 
+                if (cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_UP,
                     DIALOG_FLAG_TURN_TO_MARIO, CUTSCENE_DIALOG, DIALOG_057))
                     o->oSubAction++;
                 break;
@@ -267,7 +267,7 @@ void bhv_small_penguin_loop(void) {
                 obj_set_behavior(o, bhvSmallPenguin);
             obj_copy_pos(o, gMarioObject);
             if (gGlobalTimer % 30 == 0)
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
                 play_sound(SOUND_OBJ2_BABY_PENGUIN_YELL, gMarioObject->header.gfx.cameraToObject);
 #else
                 play_sound(SOUND_OBJ2_BABY_PENGUIN_YELL, o->header.gfx.cameraToObject);

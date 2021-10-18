@@ -136,20 +136,20 @@ static void racing_penguin_act_show_final_text(void) {
         } else {
             cur_obj_init_animation_with_sound(0);
 
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
             play_penguin_walking_sound(1);
 #endif
 
             o->oForwardVel = 4.0f;
         }
     } else if (o->oRacingPenguinFinalTextbox > 0) {
-        if ((textResult = cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_UP, 
+        if ((textResult = cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_UP,
             DIALOG_FLAG_TURN_TO_MARIO, CUTSCENE_DIALOG, o->oRacingPenguinFinalTextbox))) {
             o->oRacingPenguinFinalTextbox = -1;
             o->oTimer = 0;
         }
     } else if (o->oRacingPenguinMarioWon) {
-#ifdef VERSION_JP
+#ifdef VERSION_JP //fixme
         spawn_default_star(-7339.0f, -5700.0f, -6774.0f);
 #else
         cur_obj_spawn_star_at_y_offset(-7339.0f, -5700.0f, -6774.0f, 200.0f);

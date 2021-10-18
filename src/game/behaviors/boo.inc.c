@@ -280,7 +280,7 @@ static s32 boo_update_during_death(void) {
             if (o->oBooParentBigBoo != NULL) {
                 parentBigBoo = o->oBooParentBigBoo;
 
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
                 if (!cur_obj_has_behavior(bhvBoo)) {
                     parentBigBoo->oBigBooNumMinionBoosKilled++;
                 }
@@ -510,7 +510,7 @@ static void big_boo_act_0(void) {
 
     o->oBooParentBigBoo = NULL;
 
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     if (boo_should_be_active() && gDebugInfo[5][0] + 5 <= o->oBigBooNumMinionBoosKilled) {
 #else
     if (boo_should_be_active() && o->oBigBooNumMinionBoosKilled >= 5) {
@@ -634,7 +634,7 @@ static void big_boo_act_3(void) {
 }
 
 static void big_boo_act_4(void) {
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     boo_stop();
 #endif
 
@@ -774,7 +774,7 @@ void bhv_merry_go_round_boo_manager_loop(void) {
 
                     o->oAction = 2;
 
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
                     play_puzzle_jingle();
 #else
                     play_sound(SOUND_GENERAL2_RIGHT_ANSWER, gGlobalSoundSource);

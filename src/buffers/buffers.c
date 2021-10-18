@@ -31,7 +31,7 @@ struct GfxPool gGfxPools[GFX_NUM_POOLS];
 
 // Yield buffer for audio, 0x400 bytes. Stubbed out post-JP since the audio
 // task never yields.
-#ifdef VERSION_JP
+#ifdef VERSION_JP //fixme
 ALIGNED8 u8 gAudioSPTaskYieldBuffer[OS_YIELD_AUDIO_SIZE];
 #endif
 

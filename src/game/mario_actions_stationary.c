@@ -179,7 +179,7 @@ void play_anim_sound(struct MarioState *m, u32 actionState, s32 animFrame, u32 s
 }
 
 s32 act_start_sleeping(struct MarioState *m) {
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     s32 animFrame;
 #endif
 
@@ -197,21 +197,21 @@ s32 act_start_sleeping(struct MarioState *m) {
 
     switch (m->actionState) {
         case 0:
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
             animFrame =
 #endif
             set_mario_animation(m, MARIO_ANIM_START_SLEEP_IDLE);
             break;
 
         case 1:
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
             animFrame =
 #endif
             set_mario_animation(m, MARIO_ANIM_START_SLEEP_SCRATCH);
             break;
 
         case 2:
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
             animFrame =
 #endif
             set_mario_animation(m, MARIO_ANIM_START_SLEEP_YAWN);
@@ -219,7 +219,7 @@ s32 act_start_sleeping(struct MarioState *m) {
             break;
 
         case 3:
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
             animFrame =
 #endif
             set_mario_animation(m, MARIO_ANIM_START_SLEEP_SITTING);
@@ -235,7 +235,7 @@ s32 act_start_sleeping(struct MarioState *m) {
         m->actionState++;
     }
 
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     if (m->actionState == 2 && animFrame == -1) {
         play_sound(SOUND_MARIO_YAWNING, m->marioObj->header.gfx.cameraToObject);
     }
@@ -307,7 +307,7 @@ s32 act_sleeping(struct MarioState *m) {
 
         case 2:
             animFrame = set_mario_animation(m, MARIO_ANIM_SLEEP_LYING);
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
             play_sound_if_no_flag(m, SOUND_MARIO_SNORING3, MARIO_ACTION_SOUND_PLAYED);
 #else
             if (animFrame == 2) {
@@ -327,7 +327,7 @@ s32 act_waking_up(struct MarioState *m) {
     if (!m->actionTimer) {
         stop_sound(SOUND_MARIO_SNORING1, m->marioObj->header.gfx.cameraToObject);
         stop_sound(SOUND_MARIO_SNORING2, m->marioObj->header.gfx.cameraToObject);
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
         stop_sound(SOUND_MARIO_SNORING3, m->marioObj->header.gfx.cameraToObject);
 #endif
         raise_background_noise(2);

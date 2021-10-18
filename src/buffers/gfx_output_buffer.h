@@ -3,7 +3,7 @@
 
 #include <PR/ultratypes.h>
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 extern u64 gGfxSPTaskOutputBuffer[0x2fc0];
 #else
 extern u64 gGfxSPTaskOutputBuffer[0x3e00];

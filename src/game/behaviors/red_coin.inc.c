@@ -58,7 +58,7 @@ void bhv_red_coin_loop(void) {
             o->parentObj->oHiddenStarTriggerCounter++;
 
             // For JP version, play an identical sound for all coins.
-#ifdef VERSION_JP
+#ifdef VERSION_JP //fixme
             create_sound_spawner(SOUND_GENERAL_RED_COIN);
 #endif
             // Spawn the orange number counter, as long as it isn't the last coin.
@@ -67,7 +67,7 @@ void bhv_red_coin_loop(void) {
             }
 
             // On all versions but the JP version, each coin collected plays a higher noise.
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
             play_sound(SOUND_MENU_COLLECT_RED_COIN
                            + (((u8) o->parentObj->oHiddenStarTriggerCounter - 1) << 16),
                        gGlobalSoundSource);

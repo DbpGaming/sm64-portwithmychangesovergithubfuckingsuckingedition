@@ -216,7 +216,7 @@ void mr_i_act_1(void) {
 }
 
 void mr_i_act_0(void) {
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     obj_set_angle(o, 0, 0, 0);
 #else
     o->oMoveAnglePitch = 0;

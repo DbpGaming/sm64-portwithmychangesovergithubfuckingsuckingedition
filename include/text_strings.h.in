@@ -130,7 +130,7 @@
 
 #endif
 
-#if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU) //fixme
 
 /**
  * File Select Text
@@ -195,7 +195,7 @@
 #define TEXT_MYSCORE _("MYSCORE")
 #define TEXT_CONTINUE _("CONTINUE")
 #define TEXT_EXIT_COURSE _("EXIT COURSE")
-#ifndef VERSION_EU // "R" text is different in EU
+#ifndef VERSION_EU // "R" text is different in EU //fixme
 #define TEXT_CAMERA_ANGLE_R _("SET CAMERA ANGLE WITH R")
 #endif
 
@@ -230,7 +230,7 @@
 
 #endif
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 
 /**
  * File Select Text
@@ -476,6 +476,6 @@
 #define TEXT_MENU_SA_DE _("   VERSTECKTES AQUARIUM")
 #define TEXT_MENU_NONE_DE _("")
 #define TEXT_MENU_STARS_DE _("   GEHEIME STERNE")
-#endif // VERSION_EU
+#endif // VERSION_EU //fixme
 
 #endif // TEXT_STRINGS_H

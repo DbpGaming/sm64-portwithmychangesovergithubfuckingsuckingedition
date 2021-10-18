@@ -1533,7 +1533,7 @@ s32 act_water_ground_pound(struct MarioState *m) {
             }
 
             m->particleFlags |= PARTICLE_WATER_SPLASH;
-#ifdef VERSION_SH
+#if ENABLE_RUMBLE
             if (m->prevAction & ACT_FLAG_AIR) {
                 queue_rumble_data(5, 80);
             }

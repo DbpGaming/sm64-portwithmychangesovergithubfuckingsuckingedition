@@ -112,7 +112,7 @@ ALIGNED8 static const Texture inside_castle_seg7_texture_0700F800[] = {
 #include "levels/castle_inside/22.rgba16.inc.c"
 };
 
-#ifdef VERSION_JP
+#ifdef VERSION_JP //fixme
 // 0x07010800 - 0x07011800
 ALIGNED8 static const Texture inside_castle_seg7_texture_07010800[] = {
 #include "levels/castle_inside/23.rgba16.inc.c"

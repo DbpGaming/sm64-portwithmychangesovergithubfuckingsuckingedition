@@ -248,11 +248,7 @@ void print_course_number(void) {
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
 }
 
-#ifdef VERSION_JP
-#define ACT_NAME_X 158
-#else
 #define ACT_NAME_X 163
-#endif
 
 /**
  * Print act selector strings, some with special checks.
@@ -273,20 +269,17 @@ void print_act_selector_strings(void) {
     u8 **levelNameTbl = segmented_to_virtual(seg2_course_name_table);
     u8 *currLevelName = segmented_to_virtual(levelNameTbl[gCurrCourseNum - 1]);
     u8 **actNameTbl = segmented_to_virtual(seg2_act_name_table);
+	s16 actNameX;
 #endif
     u8 *selectedActName;
-#ifndef VERSION_EU
-    s16 lvlNameX;
-    s16 actNameX;
-#endif
     s8 i;
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     s16 language = eu_get_language();
 #endif
 
     create_dl_ortho_matrix();
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     switch (language) {
         case LANGUAGE_ENGLISH:
             actNameTbl = segmented_to_virtual(act_name_table_eu_en);
@@ -315,23 +308,16 @@ void print_act_selector_strings(void) {
     // Print the "MY SCORE" text if the coin score is more than 0
     if (save_file_get_course_coin_score(gCurrSaveFileNum - 1, gCurrCourseNum - 1) != 0) {
 #ifdef VERSION_EU
-        print_generic_string(95, 118, myScore[language]);
+        print_generic_string(95, 118, myScore[language]);//fixme
 #else
         print_generic_string(102, 118, myScore);
 #endif
     }
-
-#ifdef VERSION_EU
     print_generic_string(get_str_x_pos_from_center(160, currLevelName + 3, 10.0f), 33, currLevelName + 3);
-#else
-    lvlNameX = get_str_x_pos_from_center(160, currLevelName + 3, 10.0f);
-    print_generic_string(lvlNameX, 33, currLevelName + 3);
-#endif
-
     gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
 
 #ifdef VERSION_EU
-    print_course_number(language);
+    print_course_number(language);//fixme
 #else
     print_course_number();
 #endif
@@ -343,7 +329,7 @@ void print_act_selector_strings(void) {
         selectedActName = segmented_to_virtual(actNameTbl[(gCurrCourseNum - 1) * 6 + sSelectedActIndex]);
 
 #ifdef VERSION_EU
-        print_menu_generic_string(get_str_x_pos_from_center(ACT_NAME_X, selectedActName, 8.0f), 81, selectedActName);
+        print_menu_generic_string(get_str_x_pos_from_center(ACT_NAME_X, selectedActName, 8.0f), 81, selectedActName); //fixme
 #else
         actNameX = get_str_x_pos_from_center(ACT_NAME_X, selectedActName, 8.0f);
         print_menu_generic_string(actNameX, 81, selectedActName);
@@ -353,11 +339,7 @@ void print_act_selector_strings(void) {
     // Print the numbers above each star.
     for (i = 1; i <= sVisibleStars; i++) {
         starNumbers[0] = i;
-#ifdef VERSION_EU
-        print_menu_generic_string(143 - sVisibleStars * 15 + i * 30, 38, starNumbers);
-#else
         print_menu_generic_string(139 - sVisibleStars * 17 + i * 34, 38, starNumbers);
-#endif
     }
 
     gSPDisplayList(gDisplayListHead++, dl_menu_ia8_text_end);
@@ -413,14 +395,8 @@ s32 lvl_init_act_selector_values_and_stars(UNUSED s32 arg, UNUSED s32 unused) {
 s32 lvl_update_obj_and_load_act_button_actions(UNUSED s32 arg, UNUSED s32 unused) {
     if (sActSelectorMenuTimer >= 11) {
         // If any of these buttons are pressed, play sound and go to course act
-#ifndef VERSION_EU
-        if ((gPlayer3Controller->buttonPressed & A_BUTTON)
-         || (gPlayer3Controller->buttonPressed & START_BUTTON)
-         || (gPlayer3Controller->buttonPressed & B_BUTTON)) {
-#else
         if ((gPlayer3Controller->buttonPressed & (A_BUTTON | START_BUTTON | B_BUTTON | Z_TRIG))) {
-#endif
-#if defined(VERSION_JP)
+#if defined(VERSION_JP) //fixme
             play_sound(SOUND_MENU_STAR_SOUND, gGlobalSoundSource);
 #else
             play_sound(SOUND_MENU_STAR_SOUND_LETS_A_GO, gGlobalSoundSource);

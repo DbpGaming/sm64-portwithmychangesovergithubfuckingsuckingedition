@@ -102,7 +102,7 @@ static void camera_lakitu_intro_act_show_dialog(void) {
 
                 approach_f32_ptr(&o->oCameraLakituCircleRadius, 200.0f, 50.0f);
                 if (o->oDistanceToMario < 1000.0f) {
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
                     if (!o->oCameraLakituUnk104) {
                         play_music(SEQ_PLAYER_LEVEL, SEQUENCE_ARGS(15, SEQ_EVENT_CUTSCENE_LAKITU), 0);
                         o->oCameraLakituUnk104 = TRUE;
@@ -119,7 +119,7 @@ static void camera_lakitu_intro_act_show_dialog(void) {
                     }
                 }
             }
-        } else if (cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_UP, 
+        } else if (cur_obj_update_dialog_with_cutscene(MARIO_DIALOG_LOOK_UP,
             DIALOG_FLAG_TURN_TO_MARIO, CUTSCENE_DIALOG, DIALOG_034)) {
             o->oCameraLakituFinishedDialog = TRUE;
         }

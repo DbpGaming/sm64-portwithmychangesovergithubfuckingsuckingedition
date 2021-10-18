@@ -176,7 +176,7 @@ void apply_mario_platform_displacement(void) {
     }
 }
 
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
 /**
  * Set Mario's platform to NULL.
  */

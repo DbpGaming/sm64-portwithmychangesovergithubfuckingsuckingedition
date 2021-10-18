@@ -1,7 +1,7 @@
 #include <ultra64.h>
 #include "gfx_output_buffer.h"
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 // 0x17e00 bytes, aligned to a 0x200-byte boundary through sm64.ld. The alignment
 // wastes 0x100 bytes of space.
 u64 gGfxSPTaskOutputBuffer[0x2fc0];

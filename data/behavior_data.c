@@ -114,7 +114,7 @@
 // Often used to end behavior scripts that do not contain an infinite loop.
 #define BREAK() \
     BC_B(0x0A)
-    
+
 // Exits the behavior script, unused.
 #define BREAK_UNUSED() \
     BC_B(0x0B)
@@ -175,15 +175,15 @@
 #define ADD_INT_RAND_RSHIFT(field, min, rshift) \
     BC_BBH(0x17, field, min), \
     BC_H(rshift)
-    
+
 // No operation. Unused.
 #define CMD_NOP_1(field) \
     BC_BB(0x18, field)
-    
+
 // No operation. Unused.
 #define CMD_NOP_2(field) \
     BC_BB(0x19, field)
-    
+
 // No operation. Unused.
 #define CMD_NOP_3(field) \
     BC_BB(0x1A, field)
@@ -3087,7 +3087,6 @@ const BehaviorScript bhvMerryGoRound[] = {
     END_LOOP(),
 };
 
-#ifndef VERSION_JP
 const BehaviorScript bhvPlaysMusicTrackWhenTouched[] = {
     BEGIN(OBJ_LIST_DEFAULT),
     OR_INT(oFlags, (OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
@@ -3095,7 +3094,6 @@ const BehaviorScript bhvPlaysMusicTrackWhenTouched[] = {
         CALL_NATIVE(bhv_play_music_track_when_touched_loop),
     END_LOOP(),
 };
-#endif
 
 const BehaviorScript bhvInsideCannon[] = {
     BREAK(),
@@ -3307,7 +3305,7 @@ const BehaviorScript bhvWaterDroplet[] = {
 const BehaviorScript bhvWaterDropletSplash[] = {
     BEGIN(OBJ_LIST_DEFAULT),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     SET_INT(oFaceAnglePitch, 0),
     SET_INT(oFaceAngleYaw, 0),
     SET_INT(oFaceAngleRoll, 0),
@@ -3325,12 +3323,12 @@ const BehaviorScript bhvWaterDropletSplash[] = {
 const BehaviorScript bhvBubbleSplash[] = {
     BEGIN(OBJ_LIST_DEFAULT),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-#ifdef VERSION_JP
+#ifdef VERSION_JP //fixme
     SET_FLOAT(oFaceAnglePitch, 0),
     SET_FLOAT(oFaceAngleYaw, 0),
     SET_FLOAT(oFaceAngleRoll, 0),
 #endif
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     SET_INT(oFaceAnglePitch, 0),
     SET_INT(oFaceAngleYaw, 0),
     SET_INT(oFaceAngleRoll, 0),
@@ -3347,12 +3345,12 @@ const BehaviorScript bhvBubbleSplash[] = {
 const BehaviorScript bhvIdleWaterWave[] = {
     BEGIN(OBJ_LIST_DEFAULT),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-#ifdef VERSION_JP
+#ifdef VERSION_JP //fixme
     SET_FLOAT(oFaceAnglePitch, 0),
     SET_FLOAT(oFaceAngleYaw, 0),
     SET_FLOAT(oFaceAngleRoll, 0),
 #endif
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     SET_INT(oFaceAnglePitch, 0),
     SET_INT(oFaceAngleYaw, 0),
     SET_INT(oFaceAngleRoll, 0),
@@ -3374,12 +3372,12 @@ const BehaviorScript bhvIdleWaterWave[] = {
 const BehaviorScript bhvObjectWaterSplash[] = {
     BEGIN(OBJ_LIST_UNIMPORTANT),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-#ifdef VERSION_JP
+#ifdef VERSION_JP //fixme
     SET_FLOAT(oFaceAnglePitch, 0),
     SET_FLOAT(oFaceAngleYaw, 0),
     SET_FLOAT(oFaceAngleRoll, 0),
 #endif
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     SET_INT(oFaceAnglePitch, 0),
     SET_INT(oFaceAngleYaw, 0),
     SET_INT(oFaceAngleRoll, 0),

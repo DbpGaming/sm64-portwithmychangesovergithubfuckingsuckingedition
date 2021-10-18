@@ -81,7 +81,7 @@
 #define OBJ_MOVE_ABOVE_LAVA            (1 << 11) // 0x0800
 #define OBJ_MOVE_LEAVING_WATER         (1 << 12) // 0x1000
 #define OBJ_MOVE_BOUNCE                (1 << 13) // 0x2000
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
 #define OBJ_MOVE_ABOVE_DEATH_BARRIER   (1 << 14) // 0x4000
 #endif
 
@@ -280,7 +280,7 @@
     #define BOWSER_SUB_ACT_HIT_MINE_START           0
     #define BOWSER_SUB_ACT_HIT_MINE_FALL            1
     #define BOWSER_SUB_ACT_HIT_MINE_STOP            2
-    
+
     #define BOWSER_SUB_ACT_JUMP_ON_STAGE_IDLE        0
     #define BOWSER_SUB_ACT_JUMP_ON_STAGE_START       1
     #define BOWSER_SUB_ACT_JUMP_ON_STAGE_LAND        2
@@ -296,7 +296,7 @@
     /* oAction */
     #define FISH_SPAWNER_ACT_SPAWN   0
     #define FISH_SPAWNER_ACT_IDLE    1
-    #define FISH_SPAWNER_ACT_RESPAWN 2    
+    #define FISH_SPAWNER_ACT_RESPAWN 2
     /* oBehParams2ndByte */
     #define FISH_SPAWNER_BP_MANY_BLUE 0
     #define FISH_SPAWNER_BP_FEW_BLUE  1

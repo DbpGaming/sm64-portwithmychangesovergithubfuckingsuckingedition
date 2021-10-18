@@ -21,7 +21,7 @@
 #define HUD_LUT_GLOBAL 2
 
 // For file select JP HUD difference
-#if defined(VERSION_JP) || defined(VERSION_SH)
+#if defined(VERSION_JP) || defined(VERSION_SH) //fixme
 #define HUD_LUT_DIFF HUD_LUT_JPMENU
 #else
 #define HUD_LUT_DIFF HUD_LUT_GLOBAL
@@ -61,7 +61,7 @@ enum SpecialFontChars {
 
 // definitions for some of the special characters defined in charmap.txt
 enum DialogSpecialChars {
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     DIALOG_CHAR_LOWER_A_GRAVE = 0x60,      // 'a' grave
     DIALOG_CHAR_LOWER_A_CIRCUMFLEX = 0x61, // 'a' circumflex
     DIALOG_CHAR_LOWER_A_UMLAUT = 0x62,     // 'a' umlaut
@@ -91,7 +91,7 @@ enum DialogSpecialChars {
     DIALOG_CHAR_I_NO_DIA = 0xEB,           // 'i' without diacritic
     DIALOG_CHAR_DOUBLE_LOW_QUOTE = 0xF0,   // German opening quotation mark
 #endif
-#if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU) //fixme
     DIALOG_CHAR_SLASH = 0xD0,
     DIALOG_CHAR_MULTI_THE = 0xD1, // 'the'
     DIALOG_CHAR_MULTI_YOU = 0xD2, // 'you'
@@ -133,7 +133,7 @@ void print_generic_string(s16 x, s16 y, const u8 *str);
 void print_hud_lut_string(s8 hudLUT, s16 x, s16 y, const u8 *str);
 void print_menu_generic_string(s16 x, s16 y, const u8 *str);
 void handle_menu_scrolling(s8 scrollDirection, s8 *currentIndex, s8 minIndex, s8 maxIndex);
-#if defined(VERSION_US) || defined(VERSION_EU)
+#if defined(VERSION_US) || defined(VERSION_EU) //fixme
 s16 get_str_x_pos_from_center(s16 centerPos, u8 *str, f32 scale);
 #endif
 #if defined(VERSION_JP) || defined(VERSION_SH)

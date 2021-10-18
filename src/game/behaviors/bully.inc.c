@@ -52,11 +52,7 @@ void bhv_big_bully_init(void) {
 }
 
 void bully_check_mario_collision(void) {
-    if (
-#ifdef VERSION_SH
-    o->oAction != BULLY_ACT_LAVA_DEATH && o->oAction != BULLY_ACT_DEATH_PLANE_DEATH &&
-#endif
-    o->oInteractStatus & INT_STATUS_INTERACTED) {
+    if (o->oAction != BULLY_ACT_LAVA_DEATH && o->oAction != BULLY_ACT_DEATH_PLANE_DEATH && o->oInteractStatus & INT_STATUS_INTERACTED) {
         if (o->oBehParams2ndByte == BULLY_BP_SIZE_SMALL)
             cur_obj_play_sound_2(SOUND_OBJ2_BULLY_ATTACKED);
         else
@@ -181,8 +177,8 @@ void bully_step(void) {
 
 void bully_spawn_coin(void) {
     struct Object *coin = spawn_object(o, MODEL_YELLOW_COIN, bhvMovingYellowCoin);
-#ifdef VERSION_JP // TODO: maybe move this ifdef logic to the header?
-    cur_obj_play_sound_2(SOUND_GENERAL_COIN_SPURT);
+#ifdef VERSION_JP // TODO: maybe move this ifdef logic to the header? //fixme
+    cur_obj_play_sound_2(SOUND_GENERAL_COIN_SPURT); //fixme
 #elif defined(VERSION_EU) || defined(VERSION_SH)
     cur_obj_play_sound_2(SOUND_GENERAL_COIN_SPURT_EU);
 #else

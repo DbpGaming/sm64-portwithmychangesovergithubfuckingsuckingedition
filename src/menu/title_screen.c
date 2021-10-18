@@ -33,7 +33,7 @@ static char sLevelSelectStageNames[64][16] = {
 #undef DEFINE_LEVEL
 
 static u16 sDemoCountdown = 0;
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
 static s16 sPlayMarioGreeting = TRUE;
 static s16 sPlayMarioGameOver = TRUE;
 #endif
@@ -152,7 +152,7 @@ s16 intro_level_select(void) {
 s32 intro_regular(void) {
     s32 level = LEVEL_NONE;
 
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     // When the game stars, gGlobalTimer is less than 129 frames,
     // so Mario greets the player. After that, he will always say
     // "press start to play" when it goes back to the title screen
@@ -178,7 +178,7 @@ s32 intro_regular(void) {
         // defined in level_intro_mario_head_regular JUMP_IF commands
         // 100 is File Select - 101 is Level Select
         level = 100 + gDebugLevelSelect;
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
         sPlayMarioGreeting = TRUE;
 #endif
     }
@@ -191,7 +191,7 @@ s32 intro_regular(void) {
 s32 intro_game_over(void) {
     s32 level = LEVEL_NONE;
 
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     if (sPlayMarioGameOver == TRUE) {
         play_sound(SOUND_MARIO_GAME_OVER, gGlobalSoundSource);
         sPlayMarioGameOver = FALSE;
@@ -208,7 +208,7 @@ s32 intro_game_over(void) {
 #endif
         // same criteria as intro_regular
         level = 100 + gDebugLevelSelect;
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
         sPlayMarioGameOver = TRUE;
 #endif
     }

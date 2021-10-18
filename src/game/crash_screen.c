@@ -4,7 +4,7 @@
 
 #include "sm64.h"
 
-#if defined(TARGET_N64) && (defined(VERSION_EU) || defined(VERSION_SH))
+#if defined(TARGET_N64) && (defined(VERSION_EU) || defined(VERSION_SH)) //fixme
 
 #include "lib/src/printf.h"
 
@@ -197,7 +197,7 @@ void draw_crash_screen(OSThread *thread) {
     crash_screen_draw_rect(25, 20, 270, 25);
     crash_screen_print(30, 25, "THREAD:%d  (%s)", thread->id, gCauseDesc[cause]);
     crash_screen_print(30, 35, "PC:%08XH   SR:%08XH   VA:%08XH", tc->pc, tc->sr, tc->badvaddr);
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     osWritebackDCacheAll();
 #endif
     crash_screen_sleep(2000);
@@ -222,7 +222,7 @@ void draw_crash_screen(OSThread *thread) {
                        (u32) tc->sp);
     crash_screen_print(30, 140, "S8:%08XH   RA:%08XH", (u32) tc->s8, (u32) tc->ra);
     crash_screen_print_fpcsr(tc->fpcsr);
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     osWritebackDCacheAll();
 #endif
     crash_screen_print_float_reg(30, 170, 0, &tc->fp0.f.f_even);
@@ -241,7 +241,7 @@ void draw_crash_screen(OSThread *thread) {
     crash_screen_print_float_reg(120, 210, 26, &tc->fp26.f.f_even);
     crash_screen_print_float_reg(210, 210, 28, &tc->fp28.f.f_even);
     crash_screen_print_float_reg(30, 220, 30, &tc->fp30.f.f_even);
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     osWritebackDCacheAll();
 #endif
     osViBlack(FALSE);
@@ -278,7 +278,7 @@ void thread2_crash_screen(UNUSED void *arg) {
 }
 
 void crash_screen_set_framebuffer(u16 *framebuffer, u16 width, u16 height) {
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     gCrashScreen.framebuffer = framebuffer;
 #else
     gCrashScreen.framebuffer = (u16 *)((uintptr_t)framebuffer | 0xa0000000);
@@ -288,13 +288,13 @@ void crash_screen_set_framebuffer(u16 *framebuffer, u16 width, u16 height) {
 }
 
 void crash_screen_init(void) {
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     gCrashScreen.framebuffer = (u16 *) (osMemSize | 0x80000000) - SCREEN_WIDTH * SCREEN_HEIGHT;
 #else
     gCrashScreen.framebuffer = (u16 *) (osMemSize | 0xA0000000) - SCREEN_WIDTH * SCREEN_HEIGHT;
 #endif
     gCrashScreen.width = SCREEN_WIDTH;
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     gCrashScreen.height = SCREEN_HEIGHT;
 #else
     gCrashScreen.height = 0x10;
@@ -302,7 +302,7 @@ void crash_screen_init(void) {
     osCreateMesgQueue(&gCrashScreen.mesgQueue, &gCrashScreen.mesg, 1);
     osCreateThread(&gCrashScreen.thread, 2, thread2_crash_screen, NULL,
                    (u8 *) gCrashScreen.stack + sizeof(gCrashScreen.stack),
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
                    OS_PRIORITY_APPMAX
 #else
                    OS_PRIORITY_RMON

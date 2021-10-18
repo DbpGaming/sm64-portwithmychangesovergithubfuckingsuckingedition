@@ -10,7 +10,7 @@ void get_mario_pos(f32 *x, f32 *y, f32 *z);
 void set_mario_pos(f32 x, f32 y, f32 z);
 void apply_platform_displacement(u32 isMario, struct Object *platform);
 void apply_mario_platform_displacement(void);
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
 void clear_mario_platform(void);
 #endif
 

@@ -35,7 +35,7 @@
  * special menu messages and phases, button states and button clicked checks.
  */
 
-#ifdef VERSION_US
+#ifdef VERSION_US //fixme
 // The current sound mode is automatically centered on US and Shindou.
 static s16 sSoundTextX;
 #endif
@@ -1376,7 +1376,7 @@ void bhv_menu_button_manager_init(void) {
     sTextBaseAlpha = 0;
 }
 
-#if defined(VERSION_JP)
+#if defined(VERSION_JP) //fixme
     #define SAVE_FILE_SOUND SOUND_MENU_STAR_SOUND
 #else
     #define SAVE_FILE_SOUND SOUND_MENU_STAR_SOUND_OKEY_DOKEY
@@ -1777,7 +1777,7 @@ void print_save_file_star_count(s8 fileIndex, s16 x, s16 y) {
     }
 }
 
-#if defined(VERSION_JP) || defined(VERSION_SH)
+#if defined(VERSION_JP) || defined(VERSION_SH) //fixme
     #define SELECT_FILE_X 96
     #define SCORE_X 50
     #define COPY_X 115
@@ -1816,7 +1816,7 @@ void print_save_file_star_count(s8 fileIndex, s16 x, s16 y) {
  * Same rule applies for score, copy and erase strings.
  */
 void print_main_menu_strings(void) {
-#ifdef VERSION_SH
+#ifdef VERSION_SH //fixme
     // The current sound mode is automatically centered on US and Shindou.
     static s16 sSoundTextX; // TODO: There should be a way to make this match on both US and Shindou.
 #endif
@@ -1832,14 +1832,14 @@ void print_main_menu_strings(void) {
     print_save_file_star_count(SAVE_FILE_C, SAVEFILE_X1, 118);
     print_save_file_star_count(SAVE_FILE_D, SAVEFILE_X2, 118);
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_end);
-#ifndef VERSION_EU
+#ifndef VERSION_EU //fixme
     // Print menu names
     gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, sTextBaseAlpha);
     print_generic_string(SCORE_X, 39, textScore);
     print_generic_string(COPY_X, 39, textCopy);
     print_generic_string(ERASE_X, 39, textErase);
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     sSoundTextX = get_str_x_pos_from_center(254, textSoundModes[sSoundMode], 10.0f);
 #endif
     print_generic_string(SOUNDMODE_X1, 39, textSoundModes[sSoundMode]);
@@ -1891,7 +1891,7 @@ void print_main_lang_strings(void) {
 #ifdef VERSION_EU
 #define CHECK_FILE_X checkFileX
 #define NOSAVE_DATA_X1 noSaveDataX
-#elif defined(VERSION_JP) || defined(VERSION_SH)
+#elif defined(VERSION_JP) || defined(VERSION_SH) //fixme
 #define CHECK_FILE_X 90
 #define NOSAVE_DATA_X1 90
 #else
@@ -1923,7 +1923,7 @@ void score_menu_display_message(s8 messageID) {
     }
 }
 
-#if defined(VERSION_JP) || defined(VERSION_SH)
+#if defined(VERSION_JP) || defined(VERSION_SH) //fixme
     #define RETURN_X     45
     #define COPYFILE_X1  128
     #define ERASEFILE_X1 228
@@ -2007,7 +2007,7 @@ void print_score_menu_strings(void) {
 #endif
 }
 
-#if defined(VERSION_JP) || defined(VERSION_SH)
+#if defined(VERSION_JP) || defined(VERSION_SH) //fixme
     #define NOFILE_COPY_X  90
     #define COPY_FILE_X    90
     #define COPYIT_WHERE_X 90
@@ -2129,7 +2129,7 @@ void copy_menu_update_message(void) {
 #if defined(VERSION_JP)
     #define VIEWSCORE_X1 133
     #define ERASEFILE_X2 220
-#elif defined(VERSION_SH)
+#elif defined(VERSION_SH) //fixme
     #define VIEWSCORE_X1 133
     #define ERASEFILE_X2 230
 #elif defined(VERSION_EU)
@@ -2196,7 +2196,7 @@ void print_copy_menu_strings(void) {
     #define CURSOR_X 160.0f
     #define MENU_ERASE_YES_MIN_X 145
     #define MENU_ERASE_YES_MAX_X 164
-#elif defined(VERSION_SH)
+#elif defined(VERSION_SH) //fixme
     #define CURSOR_X (x + 70)
     #define MENU_ERASE_YES_MIN_X 145
     #define MENU_ERASE_YES_MAX_X 164
@@ -2208,7 +2208,7 @@ void print_copy_menu_strings(void) {
 
 #define MENU_ERASE_YES_NO_MIN_Y 191
 #define MENU_ERASE_YES_NO_MAX_Y 210
-#ifdef VERSION_SH
+#ifdef VERSION_SH //fixme
     #define MENU_ERASE_NO_MIN_X 194
     #define MENU_ERASE_NO_MAX_X 213
 #else
@@ -2288,7 +2288,7 @@ void print_erase_menu_prompt(s16 x, s16 y) {
 //   US and EU   ---    JP
 // M a r i o   A --- マ リ オ Ａ
 // 0 1 2 3 4 5 6 --- 0 1 2 3
-#if defined(VERSION_JP) || defined(VERSION_SH)
+#if defined(VERSION_JP) || defined(VERSION_SH) //fixme
 #ifdef VERSION_SH
     #define ERASE_FILE_X     111
 #else
@@ -2316,11 +2316,11 @@ void print_erase_menu_prompt(s16 x, s16 y) {
  * Defines IDs for the top message of the erase menu and displays it if the ID is called in messageID.
  */
 void erase_menu_display_message(s8 messageID) {
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     s16 centeredX;
 #endif
 
-#ifndef VERSION_EU
+#ifndef VERSION_EU //fixme
     unsigned char textEraseFile[] = { TEXT_ERASE_FILE };
     unsigned char textSure[] = { TEXT_SURE };
     unsigned char textNoSavedDataExists[] = { TEXT_NO_SAVED_DATA_EXISTS };
@@ -2330,7 +2330,7 @@ void erase_menu_display_message(s8 messageID) {
 
     switch (messageID) {
         case ERASE_MSG_MAIN_TEXT:
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
             centeredX = get_str_x_pos_from_center_scale(160, textEraseFile[sLanguageMode], 12.0f);
 #endif
             print_hud_lut_string_fade(HUD_LUT_DIFF, ERASE_FILE_X, 35, LANGUAGE_ARRAY(textEraseFile));
@@ -2340,14 +2340,14 @@ void erase_menu_display_message(s8 messageID) {
             print_erase_menu_prompt(90, 190); // YES NO, has functions for it too
             break;
         case ERASE_MSG_NOSAVE_EXISTS:
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
             centeredX = get_str_x_pos_from_center(160, textNoSavedDataExists[sLanguageMode], 10.0f);
 #endif
             print_generic_string_fade(NOSAVE_DATA_X3, 190, LANGUAGE_ARRAY(textNoSavedDataExists));
             break;
         case ERASE_MSG_MARIO_ERASED:
             LANGUAGE_ARRAY(textMarioAJustErased)[MARIO_ERASED_VAR] = sSelectedFileIndex + 10;
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
             centeredX = get_str_x_pos_from_center(160, textMarioAJustErased[sLanguageMode], 10.0f);
 #endif
             print_generic_string_fade(MARIO_ERASED_X, 190, LANGUAGE_ARRAY(textMarioAJustErased));
@@ -2403,7 +2403,7 @@ void erase_menu_update_message(void) {
     }
 }
 
-#if defined(VERSION_JP) || defined(VERSION_SH)
+#if defined(VERSION_JP) || defined(VERSION_SH) //fixme
 #define VIEWSCORE_X2 133
 #define COPYFILE_X2 223
 #else
@@ -2415,7 +2415,7 @@ void erase_menu_update_message(void) {
  * Prints erase menu strings that shows on the red background menu screen.
  */
 void print_erase_menu_strings(void) {
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     s16 centeredX;
 #endif
 
@@ -2425,7 +2425,7 @@ void print_erase_menu_strings(void) {
     // Print messageID called inside a erase_menu_update_message case
     erase_menu_display_message(sStatusMessageID);
 
-#ifndef VERSION_EU
+#ifndef VERSION_EU //fixme
     // Print file star counts
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_begin);
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, sTextBaseAlpha);
@@ -2440,7 +2440,7 @@ void print_erase_menu_strings(void) {
     gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, sTextBaseAlpha);
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     centeredX = get_str_x_pos_from_center(69, textReturn[sLanguageMode], 10.0f);
     print_generic_string(centeredX, 35, textReturn[sLanguageMode]);
     centeredX = get_str_x_pos_from_center(159, textViewScore[sLanguageMode], 10.0f);
@@ -2454,7 +2454,7 @@ void print_erase_menu_strings(void) {
 #endif
     gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     print_main_menu_strings();
 #else
     // Print file names
@@ -2468,7 +2468,7 @@ void print_erase_menu_strings(void) {
 #endif
 }
 
-#if defined(VERSION_JP) || defined(VERSION_SH)
+#if defined(VERSION_JP) || defined(VERSION_SH) //fixme
     #define SOUND_HUD_X 96
 #elif defined(VERSION_US)
     #define SOUND_HUD_X 88
@@ -2482,7 +2482,7 @@ void print_erase_menu_strings(void) {
 void print_sound_mode_menu_strings(void) {
     s32 mode;
 
-#if defined(VERSION_US) || defined(VERSION_SH)
+#if defined(VERSION_US) || defined(VERSION_SH) //fixme
     s16 textX;
 #elif defined(VERSION_EU)
     s32 textX;
@@ -2496,7 +2496,7 @@ void print_sound_mode_menu_strings(void) {
     gSPDisplayList(gDisplayListHead++, dl_rgba16_text_begin);
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, sTextBaseAlpha);
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     print_hud_lut_string(HUD_LUT_DIFF, 47, 32, textSoundSelect[sLanguageMode]);
     print_hud_lut_string(HUD_LUT_DIFF, 47, 101, textLanguageSelect[sLanguageMode]);
 #else
@@ -2507,7 +2507,7 @@ void print_sound_mode_menu_strings(void) {
 
     gSPDisplayList(gDisplayListHead++, dl_ia_text_begin);
 
-#ifdef VERSION_EU // In EU their X position get increased each string
+#ifdef VERSION_EU // In EU their X position get increased each string //fixme
     // Print sound mode names
     for (mode = 0, textX = 90; mode < 3; textX += 70, mode++) {
         if (mode == sSoundMode) {
@@ -2539,7 +2539,7 @@ void print_sound_mode_menu_strings(void) {
         } else {
             gDPSetEnvColor(gDisplayListHead++, 0, 0, 0, sTextBaseAlpha);
         }
-        #ifndef VERSION_JP
+        #ifndef VERSION_JP //fixme
             // Mode names are centered correctly on US and Shindou
             textX = get_str_x_pos_from_center(mode * 74 + 87, textSoundModes[mode], 10.0f);
             print_generic_string(textX, 87, textSoundModes[mode]);
@@ -2549,7 +2549,7 @@ void print_sound_mode_menu_strings(void) {
     }
 #endif
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, sTextBaseAlpha);
     print_generic_string(182, 29, textReturn[sLanguageMode]);
 #endif
@@ -2567,16 +2567,11 @@ void print_score_file_castle_secret_stars(s8 fileIndex, s16 x, s16 y) {
     // Print "[star] x"
     print_menu_generic_string(x, y, textStarX);
     // Print number of castle secret stars
-    int_to_str(save_file_get_total_star_count(fileIndex, COURSE_BONUS_STAGES - 1, COURSE_MAX - 1),
-               secretStarsText);
-#ifdef VERSION_EU
-    print_menu_generic_string(x + 20, y, secretStarsText);
-#else
+    int_to_str(save_file_get_total_star_count(fileIndex, COURSE_BONUS_STAGES - 1, COURSE_MAX - 1), secretStarsText);
     print_menu_generic_string(x + 16, y, secretStarsText);
-#endif
 }
 
-#if defined(VERSION_JP) || defined(VERSION_SH)
+#if defined(VERSION_JP) || defined(VERSION_SH) //fixme
     #define HISCORE_COIN_ICON_X  0
     #define HISCORE_COIN_TEXT_X  16
     #define HISCORE_COIN_NAMES_X 45
@@ -2594,7 +2589,7 @@ void print_score_file_course_coin_score(s8 fileIndex, s16 courseIndex, s16 x, s1
     u8 stars = save_file_get_star_flags(fileIndex, courseIndex);
     unsigned char textCoinX[] = { TEXT_COIN_X };
     unsigned char textStar[] = { TEXT_STAR };
-#if defined(VERSION_JP) || defined(VERSION_SH)
+#if defined(VERSION_JP) || defined(VERSION_SH) //fixme
     #define LENGTH 5
 #else
     #define LENGTH 8
@@ -2650,7 +2645,7 @@ void print_score_file_star_score(s8 fileIndex, s16 courseIndex, s16 x, s16 y) {
     print_menu_generic_string(x, y, starScoreText);
 }
 
-#if defined(VERSION_JP) || defined(VERSION_SH)
+#if defined(VERSION_JP) || defined(VERSION_SH) //fixme
     #define MARIO_X 28
     #define FILE_LETTER_X 86
 #ifdef VERSION_JP
@@ -2675,7 +2670,7 @@ void print_score_file_star_score(s8 fileIndex, s16 courseIndex, s16 x, s16 y) {
     #define HISCORE_X 231
 #endif
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 #include "game/segment7.h"
 #endif
 
@@ -2683,7 +2678,7 @@ void print_score_file_star_score(s8 fileIndex, s16 courseIndex, s16 x, s16 y) {
  * Prints save file score strings that shows when a save file is chosen inside the score menu.
  */
 void print_save_file_scores(s8 fileIndex) {
-#ifndef VERSION_EU
+#ifndef VERSION_EU //fixme
     unsigned char textMario[] = { TEXT_MARIO };
 #ifdef VERSION_JP
     unsigned char textFileLetter[] = { TEXT_ZERO };
@@ -2691,7 +2686,7 @@ void print_save_file_scores(s8 fileIndex) {
 #endif
     unsigned char textHiScore[] = { TEXT_HI_SCORE };
     unsigned char textMyScore[] = { TEXT_MY_SCORE };
-#if defined(VERSION_US) || defined(VERSION_SH)
+#if defined(VERSION_US) || defined(VERSION_SH) //fixme
     unsigned char textFileLetter[] = { TEXT_ZERO };
     void **levelNameTable = segmented_to_virtual(seg2_course_name_table);
 #endif
@@ -2761,14 +2756,14 @@ void print_save_file_scores(s8 fileIndex) {
 
     // Print current coin score mode
     if (sScoreFileCoinScoreMode == 0) {
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
         print_menu_generic_string(get_str_x_pos_from_center(257, textMyScore[sLanguageMode], 10.0f),
             24, textMyScore[sLanguageMode]);
 #else
         print_menu_generic_string(MYSCORE_X, 24, textMyScore);
 #endif
     } else {
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
         print_menu_generic_string(get_str_x_pos_from_center(257, textHiScore[sLanguageMode], 10.0f),
             24,textHiScore[sLanguageMode]);
 #else
@@ -2789,7 +2784,7 @@ static void print_file_select_strings(void) {
     create_dl_ortho_matrix();
     switch (sSelectedButtonID) {
         case MENU_BUTTON_NONE:
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
             // Ultimately calls print_main_menu_strings, but prints main language strings first.
             print_main_lang_strings();
 #else
@@ -2855,7 +2850,7 @@ Gfx *geo_file_select_strings_and_menu_cursor(s32 callContext, UNUSED struct Grap
  * either completing a course choosing "SAVE & QUIT" or having a game over.
  */
 s32 lvl_init_menu_values_and_cursor_pos(UNUSED s32 arg, UNUSED s32 unused) {
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     s8 fileNum;
 #endif
     sSelectedButtonID = MENU_BUTTON_NONE;
@@ -2893,7 +2888,7 @@ s32 lvl_init_menu_values_and_cursor_pos(UNUSED s32 arg, UNUSED s32 unused) {
     sMainMenuTimer = 0;
     sEraseYesNoHoverState = MENU_ERASE_HOVER_NONE;
     sSoundMode = save_file_get_sound_mode();
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
     sLanguageMode = eu_get_language();
 
     for (fileNum = 0; fileNum < 4; fileNum++) {

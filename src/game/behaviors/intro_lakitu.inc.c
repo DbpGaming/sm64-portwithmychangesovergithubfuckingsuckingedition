@@ -89,7 +89,7 @@ void bhv_intro_lakitu_loop(void) {
                 gCurrentObject->oAction += 1;
 
             switch (gCurrentObject->oTimer) {
-#if defined(VERSION_US) || defined(VERSION_SH)
+#if defined(VERSION_US) || defined(VERSION_SH) //fixme
                 case 534:
                     cur_obj_play_sound_2(SOUND_ACTION_FLYING_FAST);
                     break;
@@ -171,7 +171,7 @@ void bhv_intro_lakitu_loop(void) {
                 obj_mark_for_deletion(gCurrentObject);
                 obj_mark_for_deletion(gCurrentObject->oIntroLakituCloud);
             }
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
             if (gCurrentObject->oTimer == 14)
                 cur_obj_play_sound_2(SOUND_ACTION_INTRO_UNK45F);
 #endif

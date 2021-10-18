@@ -6,7 +6,7 @@
 
 #include "make_const_nonconst.h"
 
-#ifdef VERSION_EU
+#ifdef VERSION_EU //fixme
 #include "levels/ending/cake_eu.inc.c"
 
 // 0x07023000 - 0x07023FFF
@@ -242,7 +242,7 @@ const Gfx dl_cake_end_screen_eu_070297D8[] = {
     gsSPEndDisplayList(),
 };
 
-// VERSION_EU
+// VERSION_EU //fixme
 #else
 
 #include "levels/ending/cake.inc.c"

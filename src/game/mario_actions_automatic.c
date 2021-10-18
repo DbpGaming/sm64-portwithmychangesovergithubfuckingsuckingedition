@@ -115,7 +115,7 @@ s32 set_pole_position(struct MarioState *m, f32 offsetY) {
 s32 act_holding_pole(struct MarioState *m) {
     struct Object *marioObj = m->marioObj;
 
-#ifdef VERSION_JP
+#ifdef VERSION_JP //fixme
     if (m->input & INPUT_A_PRESSED) {
         add_tree_leaf_particles(m);
         m->faceAngle[1] += 0x8000;
@@ -192,7 +192,7 @@ s32 act_climbing_pole(struct MarioState *m) {
     struct Object *marioObj = m->marioObj;
     s16 cameraAngle = m->area->camera->yaw;
 
-#ifndef VERSION_JP
+#ifndef VERSION_JP //fixme
     if (m->health < 0x100) {
         add_tree_leaf_particles(m);
         m->forwardVel = -2.0f;
@@ -566,7 +566,7 @@ s32 act_ledge_grab(struct MarioState *m) {
     if (m->actionTimer < 4 && (m->input & INPUT_B_PRESSED) && hasSpaceForMario && m->spareFloat >= 31.0f) {
         mario_set_forward_vel(m, m->spareFloat + 5.0f);
         m->vel[1] = 25.0f;
-#ifdef VERSION_SH
+#if ENABLE_RUMBLE
         queue_rumble_data(5, 80);
 #endif
         return set_mario_action(m, ACT_LEDGE_PARKOUR, 0);
@@ -579,12 +579,8 @@ s32 act_ledge_grab(struct MarioState *m) {
         }
         return let_go_of_ledge(m);
     }
-#ifdef VERSION_EU
-    // On EU, you can't slow climb up ledges while holding A.
-    if (m->actionTimer == 10 && (m->input & INPUT_NONZERO_ANALOG) && !(m->input & INPUT_A_DOWN))
-#else
+
     if (m->actionTimer == 10 && (m->input & INPUT_NONZERO_ANALOG))
-#endif
     {
         if (intendedDYaw >= -0x4000 && intendedDYaw <= 0x4000) {
             if (hasSpaceForMario) {
