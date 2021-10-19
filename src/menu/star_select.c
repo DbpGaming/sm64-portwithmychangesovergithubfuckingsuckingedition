@@ -75,10 +75,6 @@ void bhv_act_selector_star_type_loop(void) {
             }
             gCurrentObject->oFaceAngleYaw += 0x800;
             break;
-        // If the 100 coin star is selected, rotate
-        case STAR_SELECTOR_100_COINS:
-            gCurrentObject->oFaceAngleYaw += 0x800;
-            break;
     }
     // Scale act selector stars depending of the type selected
     cur_obj_scale(gCurrentObject->oStarSelectorSize);
@@ -87,22 +83,9 @@ void bhv_act_selector_star_type_loop(void) {
 }
 
 /**
- * Renders the 100 coin star with an special star selector type.
- */
-void render_100_coin_star(u8 stars) {
-    if (stars & (1 << 6)) {
-        // If the 100 coin star has been collected, create a new star selector next to the coin score.
-        sStarSelectorModels[6] = spawn_object_abs_with_rot(gCurrentObject, 0, MODEL_STAR,
-                                                        bhvActSelectorStarType, 370, 24, -300, 0, 0, 0);
-        sStarSelectorModels[6]->oStarSelectorSize = 0.8;
-        sStarSelectorModels[6]->oStarSelectorType = STAR_SELECTOR_100_COINS;
-    }
-}
-
-/**
  * Act Selector Init Action
  * Checks how many stars has been obtained in a course, to render
- * the correct star models, the 100 coin star and also handles
+ * the correct star models, and also handles
  * checks of what star should be next in sInitSelectedActNum.
  */
 void bhv_act_selector_init(void) {
@@ -153,8 +136,6 @@ void bhv_act_selector_init(void) {
                                       75 + sVisibleStars * -75 + i * 152, 248, -300, 0, 0, 0);
         sStarSelectorModels[i]->oStarSelectorSize = 1.0f;
     }
-
-    render_100_coin_star(stars);
 }
 
 /**
@@ -343,7 +324,6 @@ Gfx *geo_act_selector_strings(s16 callContext, UNUSED struct GraphNode *node) {
 
 /**
  * Initiates act selector values before entering a main course.
- * Also load how much stars a course has, without counting the 100 coin star.
  */
 s32 lvl_init_act_selector_values_and_stars(UNUSED s32 arg, UNUSED s32 unused) {
     u8 stars = save_file_get_star_flags(gCurrSaveFileNum - 1, gCurrCourseNum - 1);
@@ -358,15 +338,8 @@ s32 lvl_init_act_selector_values_and_stars(UNUSED s32 arg, UNUSED s32 unused) {
 #endif
     sObtainedStars = save_file_get_course_star_count(gCurrSaveFileNum - 1, gCurrCourseNum - 1);
 
-    // Don't count 100 coin star
-    if (stars & (1 << 6)) {
-        sObtainedStars--;
-    }
-
     //! no return value
-#ifdef AVOID_UB
     return 0;
-#endif
 }
 
 /**
