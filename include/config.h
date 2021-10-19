@@ -56,6 +56,7 @@
         Same boundaries as vanilla (-8192 to 8191), but with 16x the amount of collision cells
         Trades more RAM usage for faster collision calculations.
         64x64 collision cells.
+		unstable and vanilla levels may have issues
     3: 4x extended bounds (refered to 2x in most tools and the blender template)
         level boundaries are twice as big (-16384 to 16383)
         Collision calculations remain as fast as vanilla, at the cost of using more RAM.
@@ -75,14 +76,14 @@
 */
 
 //set this to the extended bounds mode you want, then do "make clean".
-#define EXTENDED_BOUNDS_MODE 2
+#define EXTENDED_BOUNDS_MODE 0
 
 //the maximum amount of collision surfaces (static and dynamic combined)
 //8200 should work fine for a 2x extended stage, the vanilla value is 2300
-#define SURFACE_POOL_SIZE 12000
+#define SURFACE_POOL_SIZE 2300
 
 //make this approximately (amount of collision cells) + (SURFACE_POOL_SIZE * 3)
 //22000 should work fine for a 2x extended stage, the vanilla value is 7000
-#define SURFACE_NODE_POOL_SIZE SURFACE_POOL_SIZE * 3
+#define SURFACE_NODE_POOL_SIZE 7000
 
 #endif // CONFIG_H
