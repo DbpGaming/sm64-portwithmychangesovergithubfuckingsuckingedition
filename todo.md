@@ -3,11 +3,11 @@ thing's i still want to add to this engine but haven't yet
 
 ## Fixes
 	Graph optimizations
-	46 degree wall kick fix
-	pole fix
 	Automatic collision distance
 	Expanded audio heap
 	Castle music fix
+	disable aa
+	disable bilinear filtering
 	Bparam4 fix
 	Instant warp offset fix
 	tree particle fix
@@ -15,7 +15,7 @@ thing's i still want to add to this engine but haven't yet
 	Newest n64 os library
 	Newer compression
 	clang support
-	sram support or just more optimized save files
+	removing backup save files to increase the free space even more
 	remove goddard
 	dynamic framerate that has frameskipping under 30 and interpretation over 30
 	crash screen
@@ -32,6 +32,8 @@ thing's i still want to add to this engine but haven't yet
 	save and quit option outside of when collecting a star
 	No fall damage
 	Rumble pack on all builds
+	puppyprint
+	eu language switching on all builds with japanese added
 
 ## Powerups
 	fire flower

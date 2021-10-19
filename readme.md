@@ -42,6 +42,7 @@ currently it only does these few things
 22. jump kick fix
 23. hanging fix
 24. 8 stars to level (todo maybe 8 acts and fixing cannons)
+25. removed coin scores giving save file space to allow for custom levels
 
 you can find the credits for anything in the commits, i may add them to this readme later
 
