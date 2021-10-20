@@ -24,7 +24,6 @@ struct SaveFile
     // cap can always be found in a fixed spot within the course
     u8 capLevel;
     u8 capArea;
-    Vec3s capPos;
 
     u32 flags;
 
@@ -137,8 +136,8 @@ void save_file_clear_flags(u32 flags);
 u32 save_file_get_flags(void);
 u32 save_file_get_star_flags(s32 fileIndex, s32 courseIndex);
 void save_file_set_star_flags(s32 fileIndex, s32 courseIndex, u32 starFlags);
-void save_file_set_cap_pos(s16 x, s16 y, s16 z);
-s32 save_file_get_cap_pos(Vec3s capPos);
+void save_file_set_cap_pos();
+s32 save_file_get_cap_pos();
 void save_file_set_sound_mode(u16 mode);
 u16 save_file_get_sound_mode(void);
 void save_file_move_cap_to_default_location(void);
