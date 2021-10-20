@@ -813,7 +813,6 @@ void initiate_delayed_warp(void) {
         } else {
             switch (sDelayedWarpOp) {
                 case WARP_OP_GAME_OVER:
-                    save_file_reload();
                     warp_special(-3);
                     break;
 
