@@ -29,16 +29,16 @@
  */
 
 // Star Selector count models printed in the act selector menu.
-static struct Object *sStarSelectorModels[8];
+static struct Object *sStarSelectorModels[16];
 
 // The act the course is loaded as, affects whether some objects spawn.
 static s8 sLoadedActNum;
 
-// Number of obtained stars, excluding the coin star.
-static u8 sObtainedStars;
+// Number of obtained stars
+static u16 sObtainedStars;
 
 // Total number of stars that appear in the act selector menu.
-static s8 sVisibleStars;
+static s16 sVisibleStars;
 
 // Act selected when the act menu is first opened.
 static u8 sInitSelectedActNum;
@@ -90,8 +90,8 @@ void bhv_act_selector_star_type_loop(void) {
  */
 void bhv_act_selector_init(void) {
     s16 i = 0;
-    s32 selectorModelIDs[10];
-    u8 stars = save_file_get_star_flags(gCurrSaveFileNum - 1, gCurrCourseNum - 1);
+    s32 selectorModelIDs[16];
+    u16 stars = save_file_get_star_flags(gCurrSaveFileNum - 1, gCurrCourseNum - 1);
 
     sVisibleStars = 0;
     while (i != sObtainedStars) {
@@ -148,7 +148,7 @@ void bhv_act_selector_init(void) {
 void bhv_act_selector_loop(void) {
     s8 i;
     u8 starIndexCounter;
-    u8 stars = save_file_get_star_flags(gCurrSaveFileNum - 1, gCurrCourseNum - 1);
+    u16 stars = save_file_get_star_flags(gCurrSaveFileNum - 1, gCurrCourseNum - 1);
 
     if (sObtainedStars != 6) {
         // Sometimes, stars are not selectable even if they appear on the screen.
@@ -326,7 +326,7 @@ Gfx *geo_act_selector_strings(s16 callContext, UNUSED struct GraphNode *node) {
  * Initiates act selector values before entering a main course.
  */
 s32 lvl_init_act_selector_values_and_stars(UNUSED s32 arg, UNUSED s32 unused) {
-    u8 stars = save_file_get_star_flags(gCurrSaveFileNum - 1, gCurrCourseNum - 1);
+    u16 stars = save_file_get_star_flags(gCurrSaveFileNum - 1, gCurrCourseNum - 1);
 
     sLoadedActNum = 0;
     sInitSelectedActNum = 0;
