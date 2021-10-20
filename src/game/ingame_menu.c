@@ -2443,11 +2443,6 @@ void render_pause_castle_course_stars(s16 x, s16 y, s16 fileNum, s16 courseNum) 
 
     u16 nextStar = 0;
 
-    if (starFlags & 0x40) {
-        starCount--;
-        print_generic_string(x + 89, y - 5, textStar);
-    }
-
     while (hasStar != starCount) {
         if (starFlags & (1 << nextStar)) {
             str[nextStar * 2] = DIALOG_CHAR_STAR_FILLED;
@@ -2460,7 +2455,7 @@ void render_pause_castle_course_stars(s16 x, s16 y, s16 fileNum, s16 courseNum) 
         nextStar++;
     }
 
-    if (starCount == nextStar && starCount != 6) {
+    if (starCount == nextStar) {
         str[nextStar * 2] = DIALOG_CHAR_STAR_OPEN;
         str[nextStar * 2 + 1] = DIALOG_CHAR_SPACE;
         nextStar++;
@@ -2468,7 +2463,7 @@ void render_pause_castle_course_stars(s16 x, s16 y, s16 fileNum, s16 courseNum) 
 
     str[nextStar * 2] = DIALOG_CHAR_TERMINATOR;
 
-    print_generic_string(x + 14, y + 13, str);
+    print_generic_string(x, y + 13, str);
 }
 
 void render_pause_castle_main_strings(s16 x, s16 y) {
@@ -2477,14 +2472,6 @@ void render_pause_castle_main_strings(s16 x, s16 y) {
 #else
     void **courseNameTbl = segmented_to_virtual(seg2_course_name_table);
 #endif
-
-#ifdef VERSION_EU //fixme
-    u8 textCoin[] = { TEXT_COIN };
-    u8 textX[] = { TEXT_VARIABLE_X };
-#else
-    u8 textCoin[] = { TEXT_COIN_X };
-#endif
-
     void *courseName;
 
     u8 strVal[8];
@@ -2535,11 +2522,6 @@ void render_pause_castle_main_strings(s16 x, s16 y) {
     if (gDialogLineNum < COURSE_STAGES_COUNT) {
         courseName = segmented_to_virtual(courseNameTbl[gDialogLineNum]);
         render_pause_castle_course_stars(x, y, gCurrSaveFileNum - 1, gDialogLineNum);
-        print_generic_string(x + 34, y - 5, textCoin);
-#ifdef VERSION_EU //fixme
-        print_generic_string(x + 44, y - 5, textX);
-#endif
-        print_generic_string(x + 54, y - 5, strVal);
 #ifdef VERSION_EU //fixme
         print_generic_string(x - 17, y + 30, courseName);
 #endif
