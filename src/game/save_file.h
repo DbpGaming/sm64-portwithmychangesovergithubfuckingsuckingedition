@@ -31,7 +31,8 @@ struct SaveFile
     // Star flags for each course.
     // The most significant bit of the byte *following* each course is set if the
     // cannon is open.
-    u8 courseStars[COURSE_COUNT];
+    //u16 courseStars[COURSE_COUNT]; use this for 16 stars per course
+	u8 courseStars[COURSE_COUNT];
 
     struct SaveBlockSignature signature;
 };

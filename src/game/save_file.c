@@ -342,6 +342,8 @@ s32 save_file_exists(s32 fileIndex) {
 s32 save_file_get_course_star_count(s32 fileIndex, s32 courseIndex) {
     s32 i;
     s32 count = 0;
+    //u16 flag = 1;
+    //u16 starFlags = save_file_get_star_flags(fileIndex, courseIndex); use these for 16 stars
     u8 flag = 1;
     u8 starFlags = save_file_get_star_flags(fileIndex, courseIndex);
 
@@ -393,7 +395,7 @@ u32 save_file_get_star_flags(s32 fileIndex, s32 courseIndex) {
     if (courseIndex == -1) {
         starFlags = SAVE_FLAG_TO_STAR_FLAG(gSaveBuffer.files[fileIndex][0].flags);
     } else {
-        starFlags = gSaveBuffer.files[fileIndex][0].courseStars[courseIndex] & 0xFF;
+        starFlags = gSaveBuffer.files[fileIndex][0].courseStars[courseIndex] & 0xFF; //use 0xFFFF for 16 star
     }
 
     return starFlags;
