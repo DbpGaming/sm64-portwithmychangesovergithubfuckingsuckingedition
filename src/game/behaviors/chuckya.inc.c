@@ -7,9 +7,9 @@ struct UnusedChuckyaData {
 };
 
 struct UnusedChuckyaData sUnusedChuckyaData[] = { { 2, 0.f,  1.f },
-                                                  { 2, 10.f, 1.f }, 
-                                                  { 2, 20.f, 1.f }, 
-                                                  { 2, 20.f, 1.f }, 
+                                                  { 2, 10.f, 1.f },
+                                                  { 2, 20.f, 1.f },
+                                                  { 2, 20.f, 1.f },
                                                   { 8, 10.f, 1.f }};
 
 void common_anchor_mario_behavior(f32 sp28, f32 sp2C, s32 sp30) {
@@ -84,9 +84,7 @@ s32 approach_forward_vel(f32 *arr, f32 spC, f32 sp10) {
 
 void chuckya_act_0(void) {
     s32 sp3C;
-#ifdef AVOID_UB
     sp3C = 0;
-#endif
     UNUSED u8 pad[16];
     s32 sp28;
     if (o->oTimer == 0)

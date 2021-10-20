@@ -54,9 +54,7 @@ void snowmans_bottom_act_1(void) {
     UNUSED s16 sp26;
     s32 sp20;
     UNUSED s16 sp1E;
-#ifdef AVOID_UB
     sp20 = 0;
-#endif
 
     o->oPathedStartWaypoint = segmented_to_virtual(&ccm_seg7_trajectory_snowman);
     sp26 = object_step_without_floor_orient();

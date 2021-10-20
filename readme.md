@@ -43,6 +43,8 @@ currently it only does these few things
 23. hanging fix
 24. 8 stars to level (todo maybe 8 acts and fixing cannons)
 25. removed coin scores giving save file space to allow for custom levels
+26. removed the backup save files to allow even more space for custom levels
+27. ton of bugfixes without the flags for those versions being defined
 
 you can find the credits for anything in the commits, i may add them to this readme later
 
