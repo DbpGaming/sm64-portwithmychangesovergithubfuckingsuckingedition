@@ -555,10 +555,6 @@ s32 act_crouching(struct MarioState *m) {
     }
 
     if (m->input & INPUT_B_PRESSED) {
-        return set_mario_action(m, ACT_PUNCHING, 9);
-    }
-
-    if (m->controller->buttonPressed & R_TRIG) {
         m->vel[1] = 19.0f;
         mario_set_forward_vel(m, 32.0f);
         play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
@@ -1060,7 +1056,7 @@ s32 act_ground_pound_land(struct MarioState *m) {
         return set_jumping_action(m, ACT_GROUND_POUND_JUMP, 0);
     }
 
-    if (m->controller->buttonPressed & R_TRIG) {
+    if (m->input & INPUT_B_PRESSED) {
         mario_set_forward_vel(m, 60);
         play_sound(SOUND_ACTION_SPIN, m->marioObj->header.gfx.cameraToObject);
         return set_mario_action(m, ACT_ROLL, 0);
@@ -1118,7 +1114,7 @@ s32 act_spin_pound_land(struct MarioState *m) {
             return set_jumping_action(m, ACT_GROUND_POUND_JUMP, 0);
         }
 
-        if (m->controller->buttonPressed & R_TRIG) {
+        if (m->input & INPUT_B_PRESSED) {
             mario_set_forward_vel(m, 60);
             play_sound(SOUND_ACTION_SPIN, m->marioObj->header.gfx.cameraToObject);
             return set_mario_action(m, ACT_ROLL, 0);

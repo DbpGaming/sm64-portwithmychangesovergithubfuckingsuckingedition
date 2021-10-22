@@ -1534,7 +1534,7 @@ s32 act_crouch_slide(struct MarioState *m) {
         return set_mario_action(m, ACT_BRAKING, 0);
     }
 
-    if (m->controller->buttonPressed & R_TRIG) {
+    if (m->input & INPUT_B_PRESSED) {
         m->vel[1] = 19.0f;
         mario_set_forward_vel(m, max(32, m->forwardVel));
         play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
@@ -1599,17 +1599,17 @@ s32 act_roll(struct MarioState *m) {
             return set_mario_action(m, ACT_WALKING, 0);
     }
 
-    if (m->input & INPUT_B_PRESSED){
+    /*if (m->input & INPUT_B_PRESSED){
 #if ENABLE_RUMBLE
         queue_rumble_data(5, 80);
 #endif
         return set_jumping_action(m, ACT_FORWARD_ROLLOUT, 0);
-    }
+    }*/
 
     if (m->input & INPUT_A_PRESSED)
         return set_jumping_action(m, ACT_LONG_JUMP, 0);
 
-    if (m->controller->buttonPressed & R_TRIG && m->actionTimer > 0) {
+    if (m->input & INPUT_B_PRESSED && m->actionTimer > 0) {
         m->vel[1] = 19.0f;
         play_mario_sound(m, SOUND_ACTION_TERRAIN_JUMP, 0);
 

@@ -7,7 +7,7 @@ currently it only does these few things
 	dive hop
 	ground pound dive
 	ground pound jump
-	roll
+	roll (b while crouched)
 	spin jump
 	spin pound
 	underwater ground pound
@@ -23,11 +23,12 @@ currently it only does these few things
 10. skip peach config
 11. mario silhouette (doesn't work on pc currently)
 #### 12. reonucam3
-	right dpad for analog camera (should be changed to a bumper on pc port)
-	tap dpad right to center the camera behind mario (same as above)
-	dpad right plus joystick up to look over cliffs (also same as above)
+	r for analog camera
+	tap r to center the camera behind mario
+	r+c up to look over cliffs
+	r+c left/right for smooth camera
 	second controller right stick also is analog camera on emulator (this should work for pc-port controllers automatically but doesn't yet)
-	down button to center to closest of 8 axis
+	r+c down to center to closest of 8 axis
 	note most of these features don't work on courses with hardcoded cameras, so these won't be a thing in vanilla levels.
 
 13. Non stop stars
