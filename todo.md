@@ -6,8 +6,6 @@ thing's i still want to add to this engine but haven't yet
 	Automatic collision distance
 	Expanded audio heap
 	Castle music fix
-	disable aa
-	disable bilinear filtering
 	Bparam4 fix
 	Instant warp offset fix
 	tree particle fix

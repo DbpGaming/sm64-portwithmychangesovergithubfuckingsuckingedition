@@ -152,7 +152,7 @@ static void geo_process_master_list_sub(struct GraphNodeMasterList *node) {
 		{
 			if ((currList = node->listHeads[8]) != NULL)
 			{
-#define SCHWA AA_EN | IM_RD | CVG_DST_WRAP | CLR_ON_CVG | FORCE_BL
+#define SCHWA IM_RD | CVG_DST_WRAP | CLR_ON_CVG | FORCE_BL
 
 					gDPSetRenderMode(gDisplayListHead++, SCHWA | GBL_c1(G_BL_CLR_FOG, G_BL_A_IN, G_BL_CLR_MEM, G_BL_1MA), SCHWA | GBL_c2(G_BL_CLR_FOG, G_BL_A_IN, G_BL_CLR_MEM, G_BL_1MA));
 					gDPSetEnvColor(gDisplayListHead++, 0x80, 0x80, 0x80, 0xA0);
