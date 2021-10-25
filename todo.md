@@ -13,7 +13,6 @@ thing's i still want to add to this engine but haven't yet
 	Newest n64 os library
 	Newer compression
 	clang support
-	remove goddard
 	dynamic framerate that has frameskipping under 30 and interpretation over 30
 	crash screen
 

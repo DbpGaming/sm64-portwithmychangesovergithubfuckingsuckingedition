@@ -48,6 +48,7 @@ currently it only does these few things
 27. ton of bugfixes without the flags for those versions being defined
 28. disable aa (someone needs to confirm this for me because im stupid)
 29. disable bilinear filtering
+30. remove goddard
 
 you can find the credits for anything in the commits, i may add them to this readme later
 
